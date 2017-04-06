@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/bebas_neue/BebasNeueThin.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/bebas_neue/BebasNeueBook.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/bebas_neue/BebasNeueRegular.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/bebas_neue/BebasNeueBold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #111111;
+  color: #ffffff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+}
+
+.form-control {
+  margin: 10px 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.btn {
+  background: transparent;
+  color: #F2F2F2;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  /* CSS Transition */
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.btn-primary {
+  border-color: #ffffff;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
+    color: #111111;
+    background-color: #eeeeee;
+    border-color: #eeeeee; /*set the color you want here*/
+}
+
+@media screen and (min-width: 960px) {
+    .logo {
+      width: 60%;
+    }
+}
