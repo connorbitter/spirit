@@ -47,7 +47,8 @@ a {
 }
 
 .logo {
-  width: 100%;
+  width: 200px;
+  height: 200px;
 }
 
 .form-control {
@@ -75,6 +76,12 @@ a {
   border-color: #ffffff;
 }
 
+.btn-menu {
+  width: 100px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
 /*
 .btn-primary:hover, 
 .btn-primary:focus, 
@@ -87,6 +94,7 @@ a {
 
 @media screen and (min-width: 960px) {
     .logo {
-      width: 60%;
+      width: 300px;
+      height: 300px;
     }
 }
