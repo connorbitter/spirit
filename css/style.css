@@ -27,6 +27,13 @@ body {
   font-weight: 400;
 }
 
+a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 600;
+  font-color: #ffffff;
+  text-decoration: none;
+}
+
 .container {
   min-height: 100vh;
 }
