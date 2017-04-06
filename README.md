@@ -1,2 +1,2 @@
 # spirit
-[](connorbitter.github.io/spirit)
+[](http://connorbitter.github.io/spirit)
