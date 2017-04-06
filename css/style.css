@@ -47,7 +47,8 @@ a {
 }
 
 .logo {
-  width: 100%;
+  width: 200px;
+  height: 200px;
 }
 
 .form-control {
@@ -71,10 +72,17 @@ a {
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
-.btn-primary {
+.btn-secondary {
   border-color: #ffffff;
 }
 
+.btn-menu {
+  width: 100px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+/*
 .btn-primary:hover, 
 .btn-primary:focus, 
 .btn-primary:active, 
@@ -82,12 +90,12 @@ a {
 .open>.dropdown-toggle.btn-primary {
     color: #111111;
     background-color: #eeeeee;
-    border-color: #eeeeee; /*set the color you want here*/
-}
+    border-color: #eeeeee; } /*set the color you want here*/
 
 @media screen and (min-width: 960px) {
     .logo {
-      width: 60%;
+      width: 300px;
+      height: 300px;
     }
 }
 
