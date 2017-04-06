@@ -12,24 +12,25 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
   </head>
 
   <body>
-
+<a href="home.html"><button class="btn" type="submit" >Home</button></a>
     <div class="container vertical-center">
       <div class="row w-50">
         <div class="col-sm-12 text-center">
-        <img src="img/logo.png" class="logo img-fluid">
-          <form class="form-signin">
-            <label for="inputEmail" class="sr-only">Email Address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <button class="btn btn-primary btn-block" type="submit">Sign in</button>
-            <button class="btn btn-primary btn-block" type="submit">Sign in with Facebook</button>
-            <button class="btn btn-primary btn-block" type="submit">Switch to Bartender</button>
-          </form>
+        <h2>Your Bartender Profile</h2>
+        <!--<img src="../img/blank-profile.png" class="logo img-fluid">-->
+        <form>
+          <div class="form-group">
+            <label for="exampleSelect1">Your Specialty Drink</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>Shirley Temple</option>
+              <option>Old Fashioned</option>
+              <option>Mojito</option>
+            </select>
+          </div>
         </div>
       </div>
     </div> <!-- /container -->
