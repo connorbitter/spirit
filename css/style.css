@@ -71,10 +71,11 @@ a {
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
-.btn-primary {
+.btn-secondary {
   border-color: #ffffff;
 }
 
+/*
 .btn-primary:hover, 
 .btn-primary:focus, 
 .btn-primary:active, 
@@ -82,8 +83,7 @@ a {
 .open>.dropdown-toggle.btn-primary {
     color: #111111;
     background-color: #eeeeee;
-    border-color: #eeeeee; /*set the color you want here*/
-}
+    border-color: #eeeeee; } /*set the color you want here*/
 
 @media screen and (min-width: 960px) {
     .logo {
