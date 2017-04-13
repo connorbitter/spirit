@@ -25,6 +25,7 @@ body {
   color: #ffffff;
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
+  letter-spacing: 0.1rem;
 }
 
 a {
@@ -32,30 +33,34 @@ a {
   font-weight: 600;
   font-color: #ffffff;
   text-decoration: none;
+  letter-spacing: 0.1rem;
 }
 
-.container {
+#right {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.container-fluid {
   min-height: 100vh;
 }
 
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.logo {
-  width: 200px;
-  height: 200px;
+.form-signin {
+  width: 80%;
 }
 
 .form-control {
   margin: 10px 0;
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1rem;
 }
 
 .btn {
@@ -63,7 +68,7 @@ a {
   color: #F2F2F2;
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1rem;
   /* CSS Transition */
   -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
   -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
@@ -72,17 +77,7 @@ a {
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
-.btn-secondary {
-  border-color: #ffffff;
-}
-
-.btn-menu {
-  width: 100px;
-  margin-top: 20px;
-  margin-right: 10px;
-}
-
-/*
+/* Ghost Buttons */
 .btn-primary:hover, 
 .btn-primary:focus, 
 .btn-primary:active, 
@@ -90,13 +85,30 @@ a {
 .open>.dropdown-toggle.btn-primary {
     color: #111111;
     background-color: #eeeeee;
-    border-color: #eeeeee; } /*set the color you want here*/
+    border-color: #eeeeee; 
+}
 
-@media screen and (min-width: 960px) {
-    .logo {
-      width: 300px;
-      height: 300px;
-    }
+.btn-primary {
+  border-color: #ffffff;
+}
+
+.btn-facebook:hover, 
+.btn-facebook:focus, 
+.btn-facebook:active, 
+.btn-facebook.active {
+    color: #ffffff;
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+
+.btn-facebook {
+  border-color: #3b5998;
+}
+
+.btn-menu {
+  width: 100px;
+  margin-top: 20px;
+  margin-right: 10px;
 }
 
 /* The switch - the box around the slider */
@@ -170,4 +182,13 @@ input:checked + .slider:before {
 
 .range-slider {
   margin: 20px 0 0 0%;
+}
+
+/* MEDIA QUERIES -- ALWAYS LAST */
+
+@media screen and (min-width: 960px) {
+    .logo {
+      width: 300px;
+      height: 300px;
+    }
 }
