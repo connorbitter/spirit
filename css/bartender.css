@@ -7,6 +7,10 @@ a {
   font-color: #111111;
 }
 
+.logo {
+  filter: invert();
+}
+
 /* Ghost Buttons */
 .btn-primary:hover, 
 .btn-primary:focus, 

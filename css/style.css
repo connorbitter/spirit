@@ -57,12 +57,6 @@ label {
   font-size: 1.25rem;
 }
 
-#right {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-}
-
 #back {
   position: fixed;
 }
@@ -80,6 +74,7 @@ label {
 
 .form-front {
   width: 80%;
+  margin: auto;
 }
 
 .form-control {
