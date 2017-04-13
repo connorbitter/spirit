@@ -7,121 +7,123 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Favorites</title>
+    <title>Spirit - Favorites</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <link href="../css/style.css" rel="stylesheet">
   </head>
-  	<body>
-  		<a href="home.html"><button class="btn" type="submit" >Home</button></a>
-  		<br>
-  		<h3>Favorites:</h3>
-  		<div class="container vertical-center">
-  		<div class="row w-60">
-  			<div class="onoffswitch">
-    			<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" onclick="switchFunction()" id="myonoffswitch" checked>
-    			<label class="onoffswitch-label" for="myonoffswitch">
-        			<span class="onoffswitch-inner"></span>
-        			<div><span class="onoffswitch-switch"></span></div>
-    			</label>
-			</div>
-			<br>
-			<div id = 'drinks'>
-  				<table class="table">
-  					<thead>
-    					<tr>
-      						<th></th>
-      						<th>Drink Name</th>
-      						<th>Drink Type</th>
-      						<th>Bar Name</th>
-      						<th>Remove?</th>
-    					</tr>
-  					</thead>
-  					<tbody>
-    					<tr>
-      						<th scope="row">1</th>
-      							<td>Stella Cidre</td>
-      							<td>Cider</td>
-      							<td>Cellar</td>
-      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
-    					</tr>
-    					<tr>
-      						<th scope="row">2</th>
-      							<td>Aviation</td>
-     				 			<td>Cocktail</td>
-      							<td>Pigalle</td>
-      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
-    					</tr>
-    					<tr>
-      						<th scope="row">3</th>
-      							<td>Caipirinha</td>
-      							<td>Cocktail</td>
-      							<td>Chez Henri</td>
-      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
-    					</tr>
-  					</tbody>
-				</table>
-			</div>
-			<div id = 'bars' style="display: none">
-  				<table class="table">
-  					<thead>
-    					<tr>
-      						<th></th>
-      						<th>Bar Name</th>
-      						<th>Bartender</th>
-      						<th>Address</th>
-      						<th>Remove?</th>
-    					</tr>
-  					</thead>
-  					<tbody>
-    					<tr>
-      						<th scope="row">1</th>
-      							<td>Tavern in the Square (Allston)</td>
-      							<td>Allison</td>
-      							<td>161 Brighton Ave, Boston, MA</td>
-      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
-    					</tr>
-    					<tr>
-      						<th scope="row">2</th>
-      							<td>Wonder Bar</td>
-     				 			<td>Jenny</td>
-      							<td>186 Harvard Ave, Allston, MA</td>
-      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
-    					</tr>
-    					<tr>
-      						<th scope="row">3</th>
-      							<td>City Bar</td>
-      							<td>Craig</td>
-      							<td>61 Exeter St, Boston, MA</td>
-      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
-    					</tr>
-  					</tbody>
-				</table>
-			</div>
-		</div>
-		</div>
-		<script>
-  			function switchFunction()
-			{
-    			var chkBox = document.getElementById('myonoffswitch');
-    			if (chkBox.checked)
-    			{
-        			document.getElementById('drinks').style.display = "block";
-					document.getElementById('bars').style.display = "none";
-    			} else{
-    				document.getElementById('bars').style.display = "block";
-					document.getElementById('drinks').style.display = "none";
-    			}
-			}
-		</script>
-		<script>
-			function deleteRow(btn) {
-				var row = btn.parentNode.parentNode;
-				row.parentNode.removeChild(row);
-			}
-		</script>
-  	</body>
 
+  <body>
+    <a href="home.html"><button class="btn btn-primary no-border">Back</button></a>  
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Favorites</h1>
+
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" onclick="switchFunction()" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            </label>
+          </div>
+
+          <!-- Drinks Table -->
+          <div id="drinks">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Drink Name</th>
+                  <th>Drink Type</th>
+                  <th>Bar Name</th>
+                  <th>Remove?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Stella Cidre</td>
+                  <td>Cider</td>
+                  <td>Cellar</td>
+                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Aviation</td>
+                  <td>Cocktail</td>
+                  <td>Pigalle</td>
+                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Caipirinha</td>
+                  <td>Cocktail</td>
+                  <td>Chez Henri</td>
+                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
+                </tr>
+              </tbody>
+           </table>
+          </div> <!-- end drinks table -->
+
+       <!-- Bars Table -->
+          <div id="bars" style="display: none">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Bar Name</th>
+                  <th>Bartender</th>
+                  <th>Address</th>
+                  <th>Remove?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Tavern in the Square (Allston)</td>
+                  <td>Allison</td>
+                  <td>161 Brighton Ave, Boston, MA</td>
+                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Wonder Bar</td>
+                  <td>Jenny</td>
+                  <td>186 Harvard Ave, Allston, MA</td>
+                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                    <td>City Bar</td>
+                    <td>Craig</td>
+                    <td>61 Exeter St, Boston, MA</td>
+                    <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
+                </tr>
+              </tbody>
+           </table>
+          </div> <!-- end bars table -->
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+
+    <script>
+      function switchFunction(){
+        var chkBox = document.getElementById('myonoffswitch');
+        if (chkBox.checked){
+               document.getElementById('drinks').style.display = "block";
+               document.getElementById('bars').style.display = "none";} 
+        else {
+               document.getElementById('bars').style.display = "block";
+               document.getElementById('drinks').style.display = "none";}
+      };
+    </script>
+    <script>
+      function deleteRow(btn){
+        var row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      };
+    </script>
+  </body>
 </html>

@@ -36,6 +36,12 @@ a {
   letter-spacing: 0.1rem;
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Bebas Neue';
+  font-weight: 700;
+}
+
 #right {
   display: flex;
   align-self: center;
@@ -112,6 +118,11 @@ a {
   margin-right: 10px;
 }
 
+.no-border {
+  border: 0;
+  border-radius: 0;
+}
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -173,8 +184,5 @@ a {
 /* MEDIA QUERIES -- ALWAYS LAST */
 
 @media screen and (min-width: 960px) {
-    .logo {
-      width: 300px;
-      height: 300px;
-    }
+
 }
