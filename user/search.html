@@ -16,38 +16,30 @@
   </head>
 
   <body>
-
-    <div class="container vertical-center">
-      <!-- <div class="row w-50">
-        <div class="col-sm-12 text-center">
-          <img src="../img/map1_test.PNG" alt="caption" class="card-img-top">
-          </div>
-      </div> -->
-
-      <div id="map-container">
-      	<iframe
-		  width="600"
-		  height="450"
-		  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD0gbzErdjPnE-5-Uufhvfaj73H47RK1Tg
-		    &q=Bars,Cambridge+MA" allowfullscreen>
-		</iframe>
-	  </div>
-	  
-      <div class="container ">
-        <div>
-          <a href="home.html">Home</a>
+    <a href="home.html"><button class="btn btn-secondary no-border sticky-top">Back</button></a>
+    <div class="container">
+      <div class="row my-2">
+        <div class="col-lg-12 text-center">
+          <h1>Find Bars</h1>
         </div>
-        <div class="list-group">
-          <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Bar 1</h5>
-              <h2>****</h2>
-            </div>
-            <p class="mb-1">Great drinks and great service!</p>
-
-          </div>
       </div>
+      <div class="row full-height">
+        <div class="col-lg-8">
+          <div id="map">
+          asdf
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="list-group">
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Bar 1</h5>
+                <h2>****</h2>
+              </div>
+              <p class="mb-1">Great drinks and great service!</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div> <!-- /container -->
 
@@ -59,5 +51,19 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Google Maps -->
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI9c9TVZcXQp7ZQHwu8gVQLzZpE_JCfoc&callback=initMap">
+    </script>
+
   </body>
 </html>
