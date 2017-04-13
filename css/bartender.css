@@ -1,0 +1,88 @@
+body {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+a {
+  font-color: #111111;
+}
+
+/* Ghost Buttons */
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
+    color: #ffffff;
+    background-color: #111111;
+    border-color: #111111; 
+}
+
+.btn-primary {
+  border-color: #111111;
+  color: #111111;
+}
+
+.btn-secondary:hover, 
+.btn-secondary:focus, 
+.btn-secondary:active, 
+.btn-secondary.active, 
+.open>.dropdown-toggle.btn-secondary {
+    background-color: #e1e1e1;
+    border-color: #ffffff; 
+}
+
+.btn-secondary {
+  border-color: #111111;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.btn-facebook:hover, 
+.btn-facebook:focus, 
+.btn-facebook:active, 
+.btn-facebook.active {
+    color: #ffffff;
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+
+.btn-facebook {
+  border-color: #3b5998;
+}
+
+.btn-menu {
+  width: 10rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.no-border {
+  border: 0;
+  border-radius: 0 0 5px 0;
+}
+
+.list-group-ghost {
+  background: transparent;
+  color: #F2F2F2;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.list-group-item-ghost {
+  background: transparent;
+  color: #F2F2F2;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  border-color: #ffffff;
+  cursor: pointer;
+}
+
+.list-group-item-ghost.active {
+  background: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
+}
