@@ -16,65 +16,87 @@
   </head>
 
   <body>
-	<a href="home.html"><button class="btn" type="submit" >Home</button></a>
-	<h2>Your Profile:</h2>
-    <div class="container vertical-center">
-    	<div class="row w-60">
+    <a href="home.html"><button class="btn">Home</button></a>
+    <div class="container">
+      <div class="row my-2">
         <div class="col-sm-12 text-center">
-        	<div><img src="../img/User-Profile.png" class="logo img-fluid"></div>
-        	<h3>Welcome Ayo!</h3>
-        	<div><h5>Edit Settings</h5></div>
-        	<div class="form-group">
-    			<label for="example-date-input">Birthday</label>
-            	<input class="form-control" type="date" value="1995-09-01" id="example-date-input">
-    		</div>
-        	<form>
-        		<div class="form-group">
-        			<label for="exampleSelect1">Choose Region</label>
-        			<select class="form-control" id="exampleSelect1">
-          				<option>Boston</option>
-          				<option>New York</option>
-          				<option>Los Angeles</option>
-          				<option>Toronto</option>
-          				<option>Dallas</option>
-    					<option>Seattle</option>
-    				</select>
-        		</div>
-    		</form>
-    		<div class="range-slider">
-        		<div>	
-        			<label for="fader">Maximum Distance (Mi)</label>
-        			<div>
-        				<input class="range-slider__range" type="range" value="50" min="0" max="100" step="1"> &nbsp;
-        				<span class="range-slider__value">0 mi</span>
-        			</div>
-				</div>
-				<div>
-        			<label for="fader">Price Range ($)</label>
-        			<div>
-        				<input class="range-slider__range" type="range" value="0" min="0" max="100" step="1"> &nbsp;
-        				<span class="range-slider__value">$ 0</span>
-        			</div>
-        		</div>
-        	</div>
-        	<br>
-        	<p>Drink Types</p>
-        	<div>
-        		<form action="">
-					<input type="checkbox" name="drink type" value="Ales"> Ales &nbsp; &nbsp;
-					<input type="checkbox" name="drink type" value="Lagers"> Lagers &nbsp; &nbsp;
-					<input type="checkbox" name="drink type" value="Wine"> Wine &nbsp; &nbsp;
-					<input type="checkbox" name="drink type" value="Spirits"> Spirits
-				</form>
-        	</div>
-        	<br>
-        	<br>
-        	<div>
-                <a href="../user/rating.html" title=""><button class="btn btn-secondary">View Past Ratings</button></a>
-        	</div>
+          <h1>Your Profile</h1>
         </div>
-    	</div>
-    </div>	
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="../img/User-Profile.png" class="logo img-fluid my-2">
+          <div>
+            <h3>Welcome Ayo!</h3>
+            <a href="../user/rating.html" title=""><button class="btn btn-secondary my-1">View Past Drinks</button></a>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <form>
+            <div class="form-group">
+              <label for="example-date-input">Birthday</label>
+              <input class="form-control" type="date" value="1995-09-01" id="example-date-input">
+            </div>
+            <div class="form-group">
+              <label for="exampleSelect1">Choose Region</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>Boston</option>
+                <option>New York</option>
+                <option>Los Angeles</option>
+                <option>Toronto</option>
+                <option>Dallas</option>
+                <option>Seattle</option>
+              </select>
+            </div>
+          </form>
+          <div class="range-slider">
+            <label for="fader">Maximum Distance (Mi)</label>
+            <input class="range-slider__range" type="range" value="50" min="0" max="100" step="1">
+            <span class="range-slider__value">0 mi</span>
+          </div>
+          <div>
+            <label for="fader">Maximum Price ($ per drink)</label>
+            <input class="range-slider__range" type="range" value="5" min="0" max="100" step="1">
+            <span class="range-slider__value">$ 0</span>
+          </div>
+          <div>
+            <a href="../user/profile2.html"><button class="btn btn-secondary my-1">Update Drink Preferences</button></a>
+            <br>
+            <a href="../user/profile.html"><button class="btn btn-secondary my-1">Save Changes</button></a>
+          </div>
+          <!--
+            <h2>Drink Preferences</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Favorite Beer Types</label>
+              <form>
+                <input type="checkbox" name="drink type" value="Ales"> Ales
+                <input type="checkbox" name="drink type" value="Lagers"> Lagers
+                <input type="checkbox" name="drink type" value="Wine"> IPAs
+                <input type="checkbox" name="drink type" value="Spirits"> Stouts
+              </form>
+            </div>
+          <div class="col-md-4">
+              <label>Favorite Cocktail Types</label>
+              <form>
+                <input type="checkbox" name="drink type" value="Ales"> Sweet
+                <input type="checkbox" name="drink type" value="Lagers"> Strong
+                <input type="checkbox" name="drink type" value="Wine"> Bitter
+              </form>
+            </div>
+          <div class="col-md-4">
+              <label>Favorite Liquor Types</label>
+              <form>
+                <input type="checkbox" name="drink type" value="Ales"> Whiskey
+                <input type="checkbox" name="drink type" value="Lagers"> Vodka
+                <input type="checkbox" name="drink type" value="Wine"> Rum
+                <input type="checkbox" name="drink type" value="Spirits"> Gin
+              </form>
+          </div>
+        </div> -->
+      </div>
+    </div> <!-- end container -->
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -83,25 +105,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script>
-    	var rangeSlider = function(){
-  		var slider = $('.range-slider'),
-      		range = $('.range-slider__range'),
-      		value = $('.range-slider__value');
+      var rangeSlider = function(){
+    var slider = $('.range-slider'),
+        range = $('.range-slider__range'),
+        value = $('.range-slider__value');
     
-  		slider.each(function(){
+    slider.each(function(){
 
-    		value.each(function(){
-      		var value = $(this).prev().attr('value');
-      		$(this).html(value);
-   		 });
+      value.each(function(){
+        var value = $(this).prev().attr('value');
+        $(this).html(value);
+       });
 
-    		range.on('input', function(){
-      		$(this).next(value).html(this.value);
-    		});
-  		});
-		};
+      range.on('input', function(){
+        $(this).next(value).html(this.value);
+      });
+    });
+  };
 
-		rangeSlider();
-	</script>
+  rangeSlider();
+  </script>
   </body>
 </html>

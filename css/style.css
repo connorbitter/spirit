@@ -42,6 +42,11 @@ h1 {
   font-weight: 700;
 }
 
+label {
+  font-weight: 600;
+  margin: 0;
+}
+
 #right {
   display: flex;
   align-self: center;
