@@ -20,9 +20,11 @@ var tutorial_data = {
 			response: '',
 		},
 	],
+
+	onShift: ['Juaquin', 'Connor', 'Ayo'],
 }
 
-function displayPage () {
+function displayBarProfile () {
 	//get data object from localStorage, else loads default
 	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
 	if(!data) {data = tutorial_data;}
@@ -54,10 +56,34 @@ function displayPage () {
 
 }
 
+function displayOnShift () {
+	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
+	if(!data) {data = tutorial_data;}
+	for (var i = 0; i < data.onShift.length; i++) {
+		$('#'+data.onShift[i])[0].checked = true;
+	}
+	console.log(data.onShift);
+}
+
+// barProfileSubmit
+$("body").on('click', '#saveBarProfile', function () {
+	// get checked items
+	var all = $(":checkbox")
+	data.onShift = [];
+	for (var i = 0; i < all.length; i++) {
+		
+		if (all[i].checked) {
+			data.onShift.push(all[i].id)
+		}
+	}
+	localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
+	displayOnShift();
+})
+
 function addReview(text, index) {
 	data.reviews[index].response = text; 
 	localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
-	displayPage();
+	displayBarProfile();
 }
 
 $("body").on('click','#exampleModal',function(){
@@ -69,7 +95,7 @@ $("body").on('click','#close_modal #close',function(){
 	$("#Modal").hide();//modal("hide");
 	$('body').removeClass('modal-open');
 	$('.modal-backdrop').remove();
-	displayPage();
+	displayBarProfile();
 	location.reload();
 
 });
@@ -86,5 +112,6 @@ $("body").on('click','#save_changes',function(){
 
 // and awaaaaay we go
 $(function() {
-	displayPage();
+	displayBarProfile();
+	displayOnShift();
 });
