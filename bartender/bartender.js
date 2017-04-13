@@ -20,9 +20,11 @@ var tutorial_data = {
 			response: '',
 		},
 	],
+
+	onShift: ['Juaquin', 'Connor', 'Ayo'],
 }
 
-function displayPage () {
+function displayBarReviews () {
 	//get data object from localStorage, else loads default
 	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
 	if(!data) {data = tutorial_data;}
@@ -54,10 +56,48 @@ function displayPage () {
 
 }
 
+function displayOnShiftHome() {
+	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
+	if(!data) {data = tutorial_data;}
+	var homeShiftHTML = "";
+	homeShiftHTML += '<h1>On Shift: '
+	for (var i = 0; i < data.onShift.length; i++) {
+		homeShiftHTML += data.onShift[i] + ', '
+	}
+	end = homeShiftHTML.length;
+	homeShiftHTML = homeShiftHTML.slice(0,end-2);
+	homeShiftHTML += '</h1>';
+	$("#onShiftHome").html(homeShiftHTML);
+}
+
+function displayCheckedShifts () {
+	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
+	if(!data) {data = tutorial_data;}
+	for (var i = 0; i < data.onShift.length; i++) {
+		$('#'+data.onShift[i])[0].checked = true;
+	}
+	console.log(data.onShift);
+}
+
+// barProfileSubmit
+$("body").on('click', '#saveBarProfile', function () {
+	// get checked items
+	var all = $(":checkbox")
+	data.onShift = [];
+	for (var i = 0; i < all.length; i++) {
+		
+		if (all[i].checked) {
+			data.onShift.push(all[i].id)
+		}
+	}
+	localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
+	displayCheckedShifts();
+})
+
 function addReview(text, index) {
 	data.reviews[index].response = text; 
 	localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
-	displayPage();
+	displayBarReviews();
 }
 
 $("body").on('click','#exampleModal',function(){
@@ -69,7 +109,7 @@ $("body").on('click','#close_modal #close',function(){
 	$("#Modal").hide();//modal("hide");
 	$('body').removeClass('modal-open');
 	$('.modal-backdrop').remove();
-	displayPage();
+	displayBarReviews();
 	location.reload();
 
 });
@@ -86,5 +126,15 @@ $("body").on('click','#save_changes',function(){
 
 // and awaaaaay we go
 $(function() {
-	displayPage();
+	page = window.location.pathname.split("/").pop();
+	if (page == "review.html") {
+		displayBarReviews();
+	}
+	if (page == "bar_profile.html") {
+		displayCheckedShifts();
+	};
+	if (page == "home.html") {
+		displayOnShiftHome();
+	};
+	
 });
