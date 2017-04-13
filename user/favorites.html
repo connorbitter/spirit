@@ -17,11 +17,12 @@
   	<body>
   		<a href="home.html"><button class="btn" type="submit" >Home</button></a>
   		<div class="container vertical-center">
+  		<div class="row w-60">
   			<div class="onoffswitch">
     			<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" onclick="switchFunction()" id="myonoffswitch" checked>
     			<label class="onoffswitch-label" for="myonoffswitch">
         			<span class="onoffswitch-inner"></span>
-        			<span class="onoffswitch-switch"></span>
+        			<div><span class="onoffswitch-switch"></span></div>
     			</label>
 			</div>
 			<br>
@@ -33,26 +34,30 @@
       						<th>Drink Name</th>
       						<th>Drink Type</th>
       						<th>Bar Name</th>
+      						<th>Remove?</th>
     					</tr>
   					</thead>
   					<tbody>
     					<tr>
       						<th scope="row">1</th>
-      							<td>ABC</td>
-      							<td>DEF</td>
-      							<td>GHI</td>
+      							<td>Stella Cidre</td>
+      							<td>Cider</td>
+      							<td>Cellar</td>
+      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
     					</tr>
     					<tr>
       						<th scope="row">2</th>
-      							<td>ABC</td>
-     				 			<td>DEF</td>
-      							<td>GHI</td>
+      							<td>Aviation</td>
+     				 			<td>Cocktail</td>
+      							<td>Pigalle</td>
+      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
     					</tr>
     					<tr>
       						<th scope="row">3</th>
-      							<td>ABC</td>
-      							<td>DEF</td>
-      							<td>GHIr</td>
+      							<td>Caipirinha</td>
+      							<td>Cocktail</td>
+      							<td>Chez Henri</td>
+      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
     					</tr>
   					</tbody>
 				</table>
@@ -63,32 +68,37 @@
     					<tr>
       						<th></th>
       						<th>Bar Name</th>
-      						<th>Drink Type</th>
-      						<th>Bar Name</th>
+      						<th>Bartender</th>
+      						<th>Address</th>
+      						<th>Remove?</th>
     					</tr>
   					</thead>
   					<tbody>
     					<tr>
       						<th scope="row">1</th>
-      							<td>ABC</td>
-      							<td>DEF</td>
-      							<td>GHI</td>
+      							<td>Tavern in the Square (Allston)</td>
+      							<td>Allison</td>
+      							<td>161 Brighton Ave, Boston, MA</td>
+      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
     					</tr>
     					<tr>
       						<th scope="row">2</th>
-      							<td>ABC</td>
-     				 			<td>DEF</td>
-      							<td>GHI</td>
+      							<td>Wonder Bar</td>
+     				 			<td>Jenny</td>
+      							<td>186 Harvard Ave, Allston, MA</td>
+      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
     					</tr>
     					<tr>
       						<th scope="row">3</th>
-      							<td>ABC</td>
-      							<td>DEF</td>
-      							<td>GHIr</td>
+      							<td>City Bar</td>
+      							<td>Craig</td>
+      							<td>61 Exeter St, Boston, MA</td>
+      							<td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
     					</tr>
   					</tbody>
 				</table>
 			</div>
+		</div>
 		</div>
 		<script>
   			function switchFunction()
@@ -102,6 +112,12 @@
     				document.getElementById('bars').style.display = "block";
 					document.getElementById('drinks').style.display = "none";
     			}
+			}
+		</script>
+		<script>
+			function deleteRow(btn) {
+				var row = btn.parentNode.parentNode;
+				row.parentNode.removeChild(row);
 			}
 		</script>
   	</body>
