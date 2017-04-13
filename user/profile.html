@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <a href="home.html"><button class="btn">Home</button></a>
+    <a href="home.html"><button class="btn btn-secondary no-border sticky-top">Back</button></a>
     <div class="container">
       <div class="row my-2">
         <div class="col-sm-12 text-center">
@@ -28,10 +28,11 @@
           <img src="../img/User-Profile.png" class="logo img-fluid my-2">
           <div>
             <h3>Welcome Ayo!</h3>
-            <a href="../user/rating.html" title=""><button class="btn btn-secondary my-1">View Past Drinks</button></a>
+            <a href="../user/rating.html" title=""><button class="btn btn-primary my-1">View Past Drinks</button></a>
           </div>
         </div>
         <div class="col-md-8">
+        <h2>Settings</h2>
           <form>
             <div class="form-group">
               <label for="example-date-input">Birthday</label>
@@ -50,7 +51,7 @@
             </div>
           </form>
           <div class="range-slider">
-            <label for="fader">Maximum Distance (Mi)</label>
+            <label for="fader">Bar Maximum Distance (Mi)</label>
             <input class="range-slider__range" type="range" value="50" min="0" max="100" step="1">
             <span class="range-slider__value">0 mi</span>
           </div>
@@ -59,41 +60,40 @@
             <input class="range-slider__range" type="range" value="5" min="0" max="100" step="1">
             <span class="range-slider__value">$ 0</span>
           </div>
-          <div>
-            <a href="../user/profile2.html"><button class="btn btn-secondary my-1">Update Drink Preferences</button></a>
-            <br>
-            <a href="../user/profile.html"><button class="btn btn-secondary my-1">Save Changes</button></a>
-          </div>
-          <!--
-            <h2>Drink Preferences</h2>
+          <h2>Drink Preferences</h2>
           <div class="row">
             <div class="col-md-4">
-              <label>Favorite Beer Types</label>
-              <form>
-                <input type="checkbox" name="drink type" value="Ales"> Ales
-                <input type="checkbox" name="drink type" value="Lagers"> Lagers
-                <input type="checkbox" name="drink type" value="Wine"> IPAs
-                <input type="checkbox" name="drink type" value="Spirits"> Stouts
-              </form>
+            <h5>Beers</h5>
+              <ul class="list-group list-group-ghost">
+                <li class="list-group-item list-group-item-ghost">Stouts</li>
+                <li class="list-group-item list-group-item-ghost">Lagers</li>
+                <li class="list-group-item list-group-item-ghost">IPAs</li>
+                <li class="list-group-item list-group-item-ghost">Ales</li>
+              </ul>
             </div>
-          <div class="col-md-4">
-              <label>Favorite Cocktail Types</label>
-              <form>
-                <input type="checkbox" name="drink type" value="Ales"> Sweet
-                <input type="checkbox" name="drink type" value="Lagers"> Strong
-                <input type="checkbox" name="drink type" value="Wine"> Bitter
-              </form>
+            <div class="col-md-4">
+            <h5>Spirits</h5>
+              <ul class="list-group list-group-ghost">
+                <li class="list-group-item list-group-item-ghost">Stouts</li>
+                <li class="list-group-item list-group-item-ghost">Lagers</li>
+                <li class="list-group-item list-group-item-ghost">IPAs</li>
+                <li class="list-group-item list-group-item-ghost">Ales</li>
+              </ul>
             </div>
-          <div class="col-md-4">
-              <label>Favorite Liquor Types</label>
-              <form>
-                <input type="checkbox" name="drink type" value="Ales"> Whiskey
-                <input type="checkbox" name="drink type" value="Lagers"> Vodka
-                <input type="checkbox" name="drink type" value="Wine"> Rum
-                <input type="checkbox" name="drink type" value="Spirits"> Gin
-              </form>
+            <div class="col-md-4">
+            <h5>Cocktails</h5>
+              <ul class="list-group list-group-ghost">
+                <li class="list-group-item list-group-item-ghost">Stouts</li>
+                <li class="list-group-item list-group-item-ghost">Lagers</li>
+                <li class="list-group-item list-group-item-ghost">IPAs</li>
+                <li class="list-group-item list-group-item-ghost">Ales</li>
+              </ul>
+            </div>
           </div>
-        </div> -->
+          <div>
+            <a href="../user/profile.html"><button class="btn btn-secondary my-3 float-right">Save Changes</button></a>
+          </div>
+        </div>
       </div>
     </div> <!-- end container -->
 
@@ -106,24 +106,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script>
       var rangeSlider = function(){
-    var slider = $('.range-slider'),
+      var 
+        slider = $('.range-slider'),
         range = $('.range-slider__range'),
         value = $('.range-slider__value');
     
-    slider.each(function(){
+        slider.each(function(){
 
-      value.each(function(){
-        var value = $(this).prev().attr('value');
-        $(this).html(value);
-       });
+          value.each(function(){
+            var value = $(this).prev().attr('value');
+            $(this).html(value);
+           });
 
-      range.on('input', function(){
-        $(this).next(value).html(this.value);
+          range.on('input', function(){
+            $(this).next(value).html(this.value);
+          });
+        });
+      };
+      rangeSlider();
+    </script>
+    <script>
+      $( ".list-group-item" ).click(function() {
+        $( this ).toggleClass( "active" );
       });
-    });
-  };
-
-  rangeSlider();
-  </script>
+    </script>
   </body>
 </html>
