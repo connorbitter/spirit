@@ -16,26 +16,52 @@
   </head>
 
   <body>
-
+	<a href="home.html"><button class="btn" type="submit" >Home</button></a>
 	<div class="container vertical-center">
     	<div class="container ">
-    		<div>
-    			<a href="home.html">Home</a>
-    		</div>
+    		<div class="row my-2">
+        		<div class="col-sm-12 text-center">
+          			<h1>My Specialty Drinks</h1>
+        		</div>
+      		</div>
+      		<div><button class="btn btn-secondary my-1" onclick="addDrink()">Add Specialty Drink</button></div>
+      		<ul id="specialty drink" style="list-style-type: none; padding: 0;">
+      		<li>
     		<div class="list-group">
   				<div class="list-group-item list-group-item-action flex-column align-items-start">
 				    <div class="d-flex w-100 justify-content-between">
-				      <h5 class="mb-1">My Drink 1</h5>
+				      <h5 class="mb-1">
+				      	<textarea rows="1" cols="50" placeholder="Insert Drink Name" style = "border: none; resize: none;" maxlength="35"></textarea>
+					</h5>
 				    </div>
-				    <p class="mb-1">Drink description</p>
+				    <p class="mb-1"><textarea rows="2" cols="100" placeholder="Insert Drink Description (max 100 characters)" style = "border: none; resize: none;" maxlength="100"></textarea></p>
+				    <div><button class="btn btn-secondary my-1" onclick="">Save</button>
+				    <button class="btn btn-secondary my-1" onclick="removeDrink(this)">Delete</button></div>
 			  	</div>
 			</div>
+			</li>
+			</ul>
 			<div>
 			</div>
     	</div>
     </div> <!-- /container -->
 
-
+	<script>
+		function addDrink() {
+		var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
+				    "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>"+
+				    "<textarea rows='1' cols='50' placeholder='Insert Drink Name' style = 'border: none; resize: none;' maxlength='35'></textarea>" +
+					"</h5></div><p class='mb-1'><textarea rows='2' cols='100' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'></textarea></p>" +
+				    "<div><button class='btn btn-secondary my-1' onclick=''>Save</button>"+
+				    "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
+				
+		document.getElementById("specialty drink").insertAdjacentHTML('beforeend', drink);
+		}
+		
+		function removeDrink(e){
+			e.parentNode.parentNode.remove();
+		}
+	</script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
