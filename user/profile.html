@@ -16,56 +16,60 @@
   </head>
 
   <body>
-<<<<<<< HEAD
 	<a href="home.html"><button class="btn" type="submit" >Home</button></a>
+	<h2>Your Profile</h2>
     <div class="container vertical-center">
-      <div class="row w-50">
+    	<div class="row w-60">
         <div class="col-sm-12 text-center">
         	<div><img src="../img/User-Profile.png" class="logo img-fluid"></div>
-        	<div class="range-slider">
+        	<h3>Welcome Ayo!</h3>
+        	<div><h5>Edit Settings</h5></div>
+        	<div class="form-group">
+    			<label for="example-date-input">Birthday</label>
+            	<input class="form-control" type="date" value="1995-09-01" id="example-date-input">
+    		</div>
+        	<form>
+        		<div class="form-group">
+        			<label for="exampleSelect1">Choose Region</label>
+        			<select class="form-control" id="exampleSelect1">
+          				<option>Boston</option>
+          				<option>New York</option>
+          				<option>Los Angeles</option>
+          				<option>Toronto</option>
+          				<option>Dallas</option>
+    					<option>Seattle</option>
+    				</select>
+        		</div>
+    		</form>
+    		<div class="range-slider">
         		<div>	
-        			<label for="fader">Setting 1:</label>
-        			<input class="range-slider__range" type="range" value="250" min="0" max="500" step="50">
+        			<label for="fader">Maximum Distance (Mi)</label>
+        			<div>
+        				<input class="range-slider__range" type="range" value="50" min="0" max="100" step="1"> &nbsp;
+        				<span class="range-slider__value">0 mi</span>
+        			</div>
 				</div>
-				
 				<div>
-        			<label for="fader">Setting 2:</label>
-        			<input class="range-slider__range" type="range" value="250" min="0" max="500" step="50">
-        		</div>
-        		
-        		<div>
-        			<label for="fader">Setting 3:</label>
-        			<input class="range-slider__range" type="range" value="250" min="0" max="500" step="50">
+        			<label for="fader">Price Range ($)</label>
+        			<div>
+        				<input class="range-slider__range" type="range" value="0" min="0" max="100" step="1"> &nbsp;
+        				<span class="range-slider__value">$ 0</span>
+        			</div>
         		</div>
         	</div>
+        	<br>
+        	<p>Drink Types</p>
+        	<div>
+        		<form action="">
+					<input type="checkbox" name="drink type" value="Ales">Ales &nbsp; &nbsp;
+					<input type="checkbox" name="drink type" value="Lagers">Lagers &nbsp; &nbsp;
+					<input type="checkbox" name="drink type" value="Wine">Wine &nbsp; &nbsp;
+					<input type="checkbox" name="drink type" value="Spirits">Spirits
+				</form>
         	</div>
-=======
-<a href="home.html"><button class="btn" type="submit" >Home</button></a>
-    <div class="container vertical-center">
-      <div class="row w-50">
-        <div class="col-sm-12 text-center">
-        <h2>Your Profile</h2>
-        <!--<img src="../img/blank-profile.png" class="logo img-fluid">-->
-        <form>
-          <div class="form-group">
-            <label for="exampleSelect1">Choose Region</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>Boston</option>
-              <option>Toronto</option>
-              <option>Dallas</option>
-              <option>Seattle</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="example-date-input" class="col-2 col-form-label">Birthday</label>
-              <input class="form-control" type="date" value="1995-09-01" id="example-date-input">
-          </div>
->>>>>>> f22c411586b5f5c4949a53107b9e1633dd8121cd
         </div>
-      </div>
-    </div> <!-- /container -->
-
-
+    	</div>
+    </div>	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -73,5 +77,26 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+    	var rangeSlider = function(){
+  		var slider = $('.range-slider'),
+      		range = $('.range-slider__range'),
+      		value = $('.range-slider__value');
+    
+  		slider.each(function(){
+
+    		value.each(function(){
+      		var value = $(this).prev().attr('value');
+      		$(this).html(value);
+   		 });
+
+    		range.on('input', function(){
+      		$(this).next(value).html(this.value);
+    		});
+  		});
+		};
+
+		rangeSlider();
+	</script>
   </body>
 </html>
