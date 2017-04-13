@@ -24,7 +24,7 @@ var tutorial_data = {
 	onShift: ['Juaquin', 'Connor', 'Ayo'],
 }
 
-function displayBarProfile () {
+function displayBarReviews () {
 	//get data object from localStorage, else loads default
 	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
 	if(!data) {data = tutorial_data;}
@@ -56,7 +56,21 @@ function displayBarProfile () {
 
 }
 
-function displayOnShift () {
+function displayOnShiftHome() {
+	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
+	if(!data) {data = tutorial_data;}
+	var homeShiftHTML = "";
+	homeShiftHTML += '<h1>On Shift: '
+	for (var i = 0; i < data.onShift.length; i++) {
+		homeShiftHTML += data.onShift[i] + ', '
+	}
+	end = homeShiftHTML.length;
+	homeShiftHTML = homeShiftHTML.slice(0,end-2);
+	homeShiftHTML += '</h1>';
+	$("#onShiftHome").html(homeShiftHTML);
+}
+
+function displayCheckedShifts () {
 	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
 	if(!data) {data = tutorial_data;}
 	for (var i = 0; i < data.onShift.length; i++) {
@@ -77,13 +91,13 @@ $("body").on('click', '#saveBarProfile', function () {
 		}
 	}
 	localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
-	displayOnShift();
+	displayCheckedShifts();
 })
 
 function addReview(text, index) {
 	data.reviews[index].response = text; 
 	localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
-	displayBarProfile();
+	displayBarReviews();
 }
 
 $("body").on('click','#exampleModal',function(){
@@ -95,7 +109,7 @@ $("body").on('click','#close_modal #close',function(){
 	$("#Modal").hide();//modal("hide");
 	$('body').removeClass('modal-open');
 	$('.modal-backdrop').remove();
-	displayBarProfile();
+	displayBarReviews();
 	location.reload();
 
 });
@@ -112,6 +126,15 @@ $("body").on('click','#save_changes',function(){
 
 // and awaaaaay we go
 $(function() {
-	displayBarProfile();
-	displayOnShift();
+	page = window.location.pathname.split("/").pop();
+	if (page == "review.html") {
+		displayBarReviews();
+	}
+	if (page == "bar_profile.html") {
+		displayCheckedShifts();
+	};
+	if (page == "home.html") {
+		displayOnShiftHome();
+	};
+	
 });
