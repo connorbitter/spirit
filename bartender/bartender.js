@@ -22,7 +22,16 @@ var tutorial_data = {
 	],
 
 	onShift: ['Juaquin', 'Connor', 'Ayo'],
+
+	specialtyDrinks: [
+		{
+			name: "Hurricane",
+			desc: "The hurricane is a sweet alcoholic drink made with rum, fruit juice, and syrup or grenadine. It is one of many popular drinks served in New Orleans.",
+			null: NaN,
+		}
+	],
 }
+
 
 function displayBarReviews () {
 	//get data object from localStorage, else loads default
@@ -53,6 +62,24 @@ function displayBarReviews () {
 	// $('string/element/array/function/jQuery object/string, context')("#").click(function() { 
  //        incrementPopularity($(this).attr("data-index"))
  //    });
+
+}
+
+function displayBartenderDrinks () {
+	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
+	if(!data) {data = tutorial_data;}
+	var barFavHTML = "";
+
+	var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
+                    "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>"+
+                    "<textarea rows='1' cols='50' placeholder='Insert Drink Name' style = 'border: none; resize: none;' maxlength='35'></textarea>" +
+                    "</h5></div><p class='mb-1'><textarea rows='2' cols='100' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'></textarea></p>" +
+                    "<div><button class='btn btn-secondary my-1' onclick=''>Save</button>"+
+                    "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
+
+	for (var i = 0; i < data.specialtyDrinks.length; i++) {
+		data.specialtyDrinks[i]
+	}
 
 }
 
@@ -126,15 +153,28 @@ $("body").on('click','#save_changes',function(){
 
 // and awaaaaay we go
 $(function() {
+
+	String.prototype.format = function() {
+	var args = arguments;
+	return this.replace(/{(\d+)}/g, function(match, number) { 
+	  return typeof args[number] != 'undefined'
+	    ? args[number]
+	    : match
+	  ;
+	});
+	}
+
 	page = window.location.pathname.split("/").pop();
 	if (page == "review.html") {
 		displayBarReviews();
 	}
 	if (page == "bar_profile.html") {
 		displayCheckedShifts();
-	};
+	}
 	if (page == "home.html") {
 		displayOnShiftHome();
-	};
-	
+	}
+	if (page == "favorites.html") {
+		displayBartenderDrinks();
+	}
 });
