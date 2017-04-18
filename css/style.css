@@ -96,6 +96,10 @@ label {
   border-radius: 0;
 }
 
+.nav-top {
+  margin-bottom: 1.5rem;
+}
+
 /* Buttons */
 .btn {
   background: transparent;
