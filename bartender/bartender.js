@@ -13,7 +13,7 @@ var tutorial_data = {
         type: "beverage",
         text: "This sucks and you sucks",
         stars: 2,
-        response: '',
+        response: '',	
     }, ],
 
     onShift: ['Juaquin', 'Connor', 'Ayo'],
@@ -65,7 +65,7 @@ function displayBarReviews() {
     for (var i = 0; i < data.reviews.length; i++) {
         reviewsHTML += '<div class="list-group-item list-group-item-action flex-column align-items-start"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">';
         reviewsHTML += data.reviews[i].item;
-        reviewsHTML += '</h5><h2>' + data.reviews[i].stars + '/5</h2></div>';
+        reviewsHTML += '</h5><h2>' + data.reviews[i].stars + '</h5</h2></div>';
         reviewsHTML += '<p class="mb-1">' + data.reviews[i].text + '</p>';
         // reviewsHTML += '<div class="d-flex w-100 justify-content-between"></div>';
         reviewsHTML += '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-index=' + i + ' id="exampleModal">Respond</button></div>';
@@ -87,8 +87,8 @@ function displayBartenderDrinks() {
 
     var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
         "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>" +
-        "<textarea id='drinkName' rows='1' cols='50' placeholder='Insert Drink Name' style = 'border: none; resize: none;' maxlength='35'>{0}</textarea>" +
-        "</h5></div><p class='mb-1'><textarea id='description' rows='2' cols='100' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'>{1}</textarea></p>" +
+        "<textarea id='drinkName' rows='1' placeholder='Insert Drink Name' style = 'border: none; resize: both; overflow: auto;' maxlength='35'>{0}</textarea>" +
+        "</h5></div><p class='mb-1'><textarea id='description' rows='2' placeholder='Insert Drink Description' style = 'border: none; resize: none;' maxlength='100'>{1}</textarea></p>" +
         "<div><button class='btn btn-secondary my-1' onclick='saveDrink()'>Save</button>" +
         "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
 
@@ -119,8 +119,8 @@ function saveDrink() {
 function addDrink() {
     var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
         "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>" +
-        "<textarea id='drinkName' rows='1' cols='50' placeholder='Insert Drink Name' style = 'border: none; resize: none;' maxlength='35'></textarea>" +
-        "</h5></div><p class='mb-1'><textarea id='description' rows='2' cols='100' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'></textarea></p>" +
+        "<textarea id='drinkName' rows='1' placeholder='Insert Drink Name' style = 'border: none; resize: both; overflow: auto;' maxlength='35'></textarea>" +
+        "</h5></div><p class='mb-1'><textarea id='description' rows='2' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'></textarea></p>" +
         "<div><button class='btn btn-secondary my-1' onclick='saveDrink()'>Save</button>" +
         "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
 
