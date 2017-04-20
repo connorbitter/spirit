@@ -1,44 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>Spirit - Home</title>
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/bartender.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body>
     <a href="home.html">
         <button class="btn btn-primary no-border sticky-top" type="submit">Home</button>
     </a>
-    <div class="container vertical-center">
-      <div class="row w-50">
-        <div class="col-sm-12 text-center">
-        <h2>Your Bartender Profile</h2>
-        <!--<img src="../img/blank-profile.png" class="logo img-fluid">-->
-        <form>
-          <div class="form-group">
-            <label for="exampleSelect1">Your Specialty Drink</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>Shirley Temple</option>
-              <option>Old Fashioned</option>
-              <option>Mojito</option>
-            </select>
-          </div>
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-sm-12 text-center">
+                <h1>Your Profile</h1>
+            </div>
         </div>
-      </div>
-    </div> <!-- /container -->
-
-
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="../img/User-Profile.png" class="logo img-fluid my-2">
+                <div>
+                    <h3>Welcome Ayo!</h3>
+                    <button type="button" class="btn btn-primary my-1" data-toggle="modal" data-target="#profilepicModal">Change Profile Picture</button>
+                </div>
+                <!-- Profile Picture Modal -->
+                <div class="modal fade" id="profilepicModal" tabindex="-1" aria-labelledby="profilepicModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Change Profile Picture</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Current Photo</h5>
+                                        <img src="../img/User-Profile.png" class="logo img-fluid my-2">
+                                        <div class="form-group">
+                                            <label for="uploadProfilePic">Upload New Picture</label>
+                                            <input type="file" class="form-control-file" id="uploadProfilePic" aria-describedby="fileHelp">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2>Settings</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="example-date-input">Birthday</label>
+                        <input class="form-control" type="date" value="1995-09-01" id="example-date-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Choose Region</label>
+                        <select class="form-control" id="exampleSelect1">
+                            <option>Boston</option>
+                            <option>New York</option>
+                            <option>Los Angeles</option>
+                            <option>Toronto</option>
+                            <option>Dallas</option>
+                            <option>Seattle</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="range-slider">
+                    <label for="fader">Bar Maximum Distance (Mi)</label>
+                    <input class="range-slider__range" type="range" value="50" min="0" max="100" step="1">
+                    <span class="range-slider__value">0 mi</span>
+                </div>
+                <div>
+                    <label for="fader">Maximum Price ($ per drink)</label>
+                    <input class="range-slider__range" type="range" value="5" min="0" max="100" step="1">
+                    <span class="range-slider__value">$ 0</span>
+                </div>
+                <h2>Drink Preferences</h2>
+                <div class="row">
+                    <div class="col-4">
+                        <h5>Beers</h5>
+                        <ul class="list-group list-group-ghost">
+                            <li class="list-group-item list-group-item-ghost">Stouts</li>
+                            <li class="list-group-item list-group-item-ghost">Lagers</li>
+                            <li class="list-group-item list-group-item-ghost">IPAs</li>
+                            <li class="list-group-item list-group-item-ghost">Ales</li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h5>Spirits</h5>
+                        <ul class="list-group list-group-ghost">
+                            <li class="list-group-item list-group-item-ghost">Vodka</li>
+                            <li class="list-group-item list-group-item-ghost">Gin</li>
+                            <li class="list-group-item list-group-item-ghost">Rum</li>
+                            <li class="list-group-item list-group-item-ghost">Whiskey</li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h5>Cocktails</h5>
+                        <ul class="list-group list-group-ghost">
+                            <li class="list-group-item list-group-item-ghost">Bitter</li>
+                            <li class="list-group-item list-group-item-ghost">Sweet</li>
+                            <li class="list-group-item list-group-item-ghost">Strong</li>
+                            <li class="list-group-item list-group-item-ghost">Unique</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <a href="../user/profile.html">
+                        <button class="btn btn-secondary my-3 float-right">Save Changes</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+    <!-- Mobile Navigation -->
+    <nav class="nav-bottom fixed-bottom">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="search.html"><i class="fa fa-search" aria-hidden="true"></i><br>Search</a></li>
+            <li class="nav-item"><a class="nav-link" href="drink_swipe.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Drinks</a></li>
+            <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>Favorites</a></li>
+            <li class="nav-item"><a class="nav-link active" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+        </ul>
+    </nav>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -46,5 +146,32 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  </body>
+    <script>
+    var rangeSlider = function() {
+        var
+            slider = $('.range-slider'),
+            range = $('.range-slider__range'),
+            value = $('.range-slider__value');
+
+        slider.each(function() {
+
+            value.each(function() {
+                var value = $(this).prev().attr('value');
+                $(this).html(value);
+            });
+
+            range.on('input', function() {
+                $(this).next(value).html(this.value);
+            });
+        });
+    };
+    rangeSlider();
+    </script>
+    <script>
+    $(".list-group-item").click(function() {
+        $(this).toggleClass("active");
+    });
+    </script>
+</body>
+
 </html>
