@@ -1,65 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>Spirit - Bar Profile</title>
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/bartender.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
-<a href="home.html"><button class="btn" type="submit">Home</button></a>
+<body>
+    <a href="home.html">
+        <button class="btn" type="submit">Home</button>
+    </a>
     <div class="container vertical-center">
-      <div class="row w-50">
-        <div class="col-sm-12 text-center">
-        <h2>Bar Profile</h2>
-
-          <div class="form-group">
-            <label for="exampleSelect2">Drinks Being Served - Can Select Multiple</label>
-            <select multiple class="form-control" id="exampleSelect2">
-              <option>Bud</option>
-              <option>Bud Light</option>
-              <option>Bud Light Lime</option>
-              <option>Old Fashioned</option>
-              <option>Mike's Hard</option>
-            </select>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4">Bartenders On Shift</label>
-            <div class="col-sm-8" id="bartender_checkboxes">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" id="Connor"> Connor
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" id="Juaquin"> Juaquin
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" id="Ayo"> Ayo
-                </label>
-              </div>
+        <div class="row w-50">
+            <div class="col-sm-12 text-center">
+                <h2>Bar Profile</h2>
+                <div class="row">
+                    <div class="container" id="on_draft">
+                        <div class="form-group">
+                            <label for="exampleSelect2">Drinks Being Served</label>
+                            <select multiple class="form-control" id="exampleSelect2">
+                                <option>Bud</option>
+                                <option>Bud Light</option>
+                                <option>Bud Light Lime</option>
+                                <option>Old Fashioned</option>
+                                <option>Mike's Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container" id="specialty">
+                      
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4">Bartenders On Shift</label>
+                    <div class="col-sm-8" id="bartender_checkboxes">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="Connor"> Connor
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="Juaquin"> Juaquin
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="Ayo"> Ayo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" type="submit" id="saveBarProfile">Submit</button>
+                <a href="review.html" title="">
+                    <button class="btn btn-secondary">Reviews</button>
+                </a>
             </div>
-          </div>
-                  <button class="btn btn-secondary" type="submit" id="saveBarProfile">Submit</button>
-                  <a href="review.html" title=""><button class="btn btn-secondary">Reviews</button></a>
         </div>
-      </div>
-    </div> <!-- /container -->
-
-
+    </div>
+    <!-- /container -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -68,5 +75,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="bartender.js" type="text/javascript" charset="utf-8" async defer></script>
-  </body>
+</body>
+
 </html>

@@ -18,14 +18,30 @@ var tutorial_data = {
 
     onShift: ['Juaquin', 'Connor', 'Ayo'],
 
+    drinks: {
+    	liquors: [
+    		{name: "tequila", price: 3}
+    	],
+    	beers: [
+	    	{name: "Bud Light", price: 5},
+	    	{name: "Heineken", price: 6},
+	    	{name: "Mike's", price: 5.5},
+	    	{name: "PBR", price: 5},
+    	],
+    	cocktails: [
+	    	{name: "Old Fashioned", price: 8.5},
+	    	{name: "Negroni", price: 9}
+    	]
+    },
+
     specialtyDrinks: [{
         name: "Hurricane",
         desc: "sweet alcoholic drink made with rum, fruit juice, and syrup or grenadine",
-        null: NaN,
+        price: 13,
     }, {
         name: "Tequila Sunrise",
         desc: "cocktail made with tequila, orange juice, and grenadine syrup",
-        null: NaN,
+        price: 11,
     }],
 };
 
@@ -162,6 +178,35 @@ function barProfileSubmit() {
     displayCheckedShifts();
 }
 
+function displayBarProfileDrinks() {
+	data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
+    if (!data) { data = tutorial_data; }
+	
+	var barDrinksHTML = '<ul class="list-group"><label for="exampleSelect2">On Draft</label>';
+	for (var i = 0; i < data.drinks.beers.length; i++) {
+		barDrinksHTML += '<li class="list-group-item justify-content-between">';
+		barDrinksHTML += '<input class="form-check-input" type="checkbox">';
+		barDrinksHTML += data.drinks.beers[i].name;
+		barDrinksHTML += '<span class="badge badge-default badge-pill">';
+		barDrinksHTML += data.drinks.beers[i].price;
+		barDrinksHTML += '</span></li>';
+	}
+	barDrinksHTML += "</ul>";
+	$('#on_draft').html(barDrinksHTML);
+	
+	barDrinksHTML = '<ul class="list-group"><label for="exampleSelect2">Specialty</label>';
+	for (var j = 0; j < data.specialtyDrinks.length; j++) {
+		barDrinksHTML += '<li class="list-group-item justify-content-between">';
+		barDrinksHTML += '<input class="form-check-input" type="checkbox">';
+		barDrinksHTML += data.specialtyDrinks[j].name;
+		barDrinksHTML += '<span class="badge badge-default badge-pill">';
+		barDrinksHTML += data.specialtyDrinks[j].price;
+		barDrinksHTML += '</span></li>';
+	}
+	barDrinksHTML += "</ul>";
+	$('#specialty').html(barDrinksHTML);
+}
+
 
 $("body").on('click', '#saveBarProfile', function() {
     barProfileSubmit();
@@ -199,6 +244,7 @@ $(function() {
     }
     if (page == "bar_profile.html") {
         displayCheckedShifts();
+        displayBarProfileDrinks();
     }
     if (page == "home.html") {
         displayOnShiftHome();
