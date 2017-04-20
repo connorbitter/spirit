@@ -133,11 +133,6 @@ label {
   font-size: 0.75rem;
 }
 
-.logo-top {
-  width: 5%;
-  padding: 0.25rem 0;
-}
-
 /* Buttons */
 .btn {
   background: transparent;
@@ -196,7 +191,7 @@ label {
 
 .btn-menu {
   width: 10rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-right: 0.5rem;
 }
 

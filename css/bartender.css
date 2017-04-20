@@ -4,11 +4,12 @@ body {
 }
 
 a {
-  font-color: #111111;
+  color: #111111;
 }
 
 .logo {
   filter: invert();
+  max-height: 20%;
 }
 
 /* Ghost Buttons */
@@ -48,11 +49,12 @@ a {
 .btn-facebook:active, 
 .btn-facebook.active {
     color: #ffffff;
-    background-color: #3b5998;
+    background-color: #1e4e7d;
     border-color: #3b5998;
 }
 
 .btn-facebook {
+  background-color: #3b5998;
   border-color: #3b5998;
 }
 
@@ -83,4 +85,77 @@ a {
   background: #ffffff;
   color: #111111;
   border-color: #ffffff;
+}
+
+/************************
+        NAVIGATION 
+*************************/
+
+.nav-tabs .nav-link {
+  border-radius: 0;
+  border: 0;
+}
+
+.nav-item {
+  border-radius: 0;
+  border-bottom: 0;
+  color: #ffffff;
+}
+
+.nav-item:hover {
+  background-color: #ffffff;
+  color: #111111;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 0;
+}
+
+.nav-item a:hover {
+  background-color: #ffffff;
+  color: #111111;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 0;
+}
+
+.nav-item a {
+  background-color: #111111;
+  color: #ffffff;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 0;
+}
+
+.nav-top {
+  border-width: 0;
+  background-color: #111111;
+  display: none;
+  box-shadow: 0 3px 3px 0px rgba(0,0,0,.4);
+}
+
+.nav-bottom {
+  background-color: #111111;
+  font-size: 0.75rem;
+  box-shadow: 0 -1px 1px 0px rgba(0,0,0,.4);
+  border: 0;
+}
+
+@media (min-width: 576px) {
+  body {
+    font-size: 1.0rem;
+  }
+
+  .nav-top {
+    font-size: 1.0rem;
+    display: block;
+  }
+
+  .nav-bottom {
+    display: none;
+  }
+
+  .container {
+    padding-bottom: 0;
+  }
+
 }

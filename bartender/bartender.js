@@ -136,13 +136,13 @@ function displayOnShiftHome() {
     data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
     if (!data) { data = tutorial_data; }
     var homeShiftHTML = "";
-    homeShiftHTML += '<h1>On Shift: ';
+    homeShiftHTML += '<p class="text-center" style="margin-bottom: 0;">On Shift: ';
     for (var i = 0; i < data.onShift.length; i++) {
         homeShiftHTML += data.onShift[i] + ', ';
     }
     end = homeShiftHTML.length;
     homeShiftHTML = homeShiftHTML.slice(0, end - 2);
-    homeShiftHTML += '</h1>';
+    homeShiftHTML += '</p>';
     $("#onShiftHome").html(homeShiftHTML);
 }
 

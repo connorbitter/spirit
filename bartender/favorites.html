@@ -2,103 +2,106 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-    <title>Spirit - Home</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/bartender.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Spirit - Home</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/bartender.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
 </head>
 
 <body>
-    <nav class="nav-top sticky-top">
-        <ul class="nav nav-tabs nav-fill">
-            <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="bar_profile.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Manage Bar</a></li>
-            <li class="nav-item"><a class="nav-link active" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>My Drinks</a></li>
-            <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
-        </ul>
-    </nav>
-    <!-- <a href="home.html">
-        <button class="btn btn-primary no-border sticky-top" type="submit">Home</button>
-    </a> -->
-    <div class="container vertical-center">
-        <div class="container ">
-            <div class="row my-2">
-                <div class="col-sm-12 text-center">
-                    <h1>My Specialty Drinks</h1>
-                </div>
-            </div>
-            <!-- Add specialty drink button -->
-            <div>
-                <button class="btn btn-secondary my-1" onclick="addDrink()" id="drinkFavNew">Add Specialty Drink</button>
-            </div>
-            <!-- Specialty drink layout -->
-            <div>
-                <ul id="specialty_drink" style="list-style-type: none; padding: 0;">
-                    <li>
-                        <div class="list-group">
-                            <div class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <!-- User can type into text area to input drink name -->
-                                    <h5 class="mb-1">
-                                      <textarea id='drinkName' rows="1" cols="50" placeholder="Insert Drink Name" style = "border: none; resize: none;" maxlength="35"></textarea>
-                                    </h5>
-                                </div>
-                                <!-- User can type into text area to input drink description -->
-                                <p class="mb-1">
-                                    <textarea id='description' rows="2" cols="100" placeholder="Insert Drink Description (max 100 characters)" style="border: none; resize: none;" maxlength="100"></textarea>
-                                </p>
-                                <!-- Remove drink button-->
-                                <div>
-                                    <button class="btn btn-secondary my-1" onclick="saveDrink()" id="drinkFavSave">Save</button>
-                                    <button class="btn btn-secondary my-1" onclick="removeDrink(this)" id="drinkFavDelete">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+  <nav class="nav-top sticky-top">
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="bar_profile.html"><i class="fa fa-building" aria-hidden="true"></i><br>Manage Bar</a></li>
+      <li class="nav-item"><a class="nav-link active" href="favorites.html"><i class="fa fa-beer" aria-hidden="true"></i><br>My Drinks</a></li>
+      <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+    </ul>
+  </nav>
+  <!-- <a href="home.html">
+    <button class="btn btn-primary no-border sticky-top" type="submit">Home</button>
+  </a> -->
+  <div class="container vertical-center">
+    <div class="container ">
+      <div class="row my-2">
+        <div class="col-sm-12 text-center">
+          <h1>My Specialty Drinks</h1>
         </div>
-    </div>
-    <!-- /container -->
-    <nav class="nav-bottom fixed-bottom">
-        <ul class="nav nav-tabs nav-fill">
-            <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="bar_profile.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Manage Bar</a></li>
-            <li class="nav-item"><a class="nav-link active" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>My Drinks</a></li>
-            <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+      </div>
+      <!-- Add specialty drink button -->
+      <div>
+        <button class="btn btn-secondary my-1" onclick="addDrink()" id="drinkFavNew">Add Specialty Drink</button>
+      </div>
+      <!-- Specialty drink layout -->
+      <div>
+        <ul id="specialty_drink" style="list-style-type: none; padding: 0;">
+          <li>
+            <div class="list-group">
+              <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <!-- User can type into text area to input drink name -->
+                  <h5 class="mb-1">
+                    <textarea id='drinkName' rows="1" cols="50" placeholder="Insert Drink Name" style = "border: none; resize: none;" maxlength="35"></textarea>
+                  </h5>
+                </div>
+                <!-- User can type into text area to input drink description -->
+                <p class="mb-1">
+                  <textarea id='description' rows="2" cols="100" placeholder="Insert Drink Description (max 100 characters)" style="border: none; resize: none;" maxlength="100"></textarea>
+                </p>
+                <!-- Remove drink button-->
+                <div>
+                  <button class="btn btn-secondary my-1" onclick="saveDrink()" id="drinkFavSave">Save</button>
+                  <button class="btn btn-secondary my-1" onclick="removeDrink(this)" id="drinkFavDelete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
-    </nav>
+      </div>
+    </div>
+  </div>
+  <!-- /container -->
+  <nav class="nav-bottom fixed-bottom">
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="bar_profile.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Manage Bar</a></li>
+      <li class="nav-item"><a class="nav-link active" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>My Drinks</a></li>
+      <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+    </ul>
+  </nav>
 
-    <!-- <script>
-    // Copies drink format and adds a blank empty field
-    //    function addDrink() {
-    //      var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
-    //                  "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>"+
-    //                  "<textarea rows='1' cols='50' placeholder='Insert Drink Name' style = 'border: none; resize: none;' maxlength='35'></textarea>" +
-    //                  "</h5></div><p class='mb-1'><textarea rows='2' cols='100' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'></textarea></p>" +
-    //                  "<div><button class='btn btn-secondary my-1' onclick=''>Save</button>"+
-    //                  "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
+  <!-- <script>
+  // Copies drink format and adds a blank empty field
+  //  function addDrink() {
+  //    var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
+  //          "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>"+
+  //          "<textarea rows='1' cols='50' placeholder='Insert Drink Name' style = 'border: none; resize: none;' maxlength='35'></textarea>" +
+  //          "</h5></div><p class='mb-1'><textarea rows='2' cols='100' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'></textarea></p>" +
+  //          "<div><button class='btn btn-secondary my-1' onclick=''>Save</button>"+
+  //          "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
 
-    //      document.getElementById("specialty_drink").insertAdjacentHTML('beforeend', drink);
-    // }
+  //    document.getElementById("specialty_drink").insertAdjacentHTML('beforeend', drink);
+  // }
 
-    // removes current node in unordered list
-    // function removeDrink(e){ // e.parentNode.parentNode.remove(); // }
-    </script> -->
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="bartender.js" type="text/javascript" charset="utf-8" async defer></script>
+  // removes current node in unordered list
+  // function removeDrink(e){ // e.parentNode.parentNode.remove(); // }
+  </script> -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="bartender.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 
 </html>
