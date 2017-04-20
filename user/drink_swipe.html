@@ -7,34 +7,26 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Spirit - Home</title>
+    <title>Spirit - Find Drinks</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
   </head>
 
   <body>
-  <ul class="nav nav-tabs nav-fill">
-    <li class="nav-item">
-      <a class="nav-link" href="home.html">Menu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Bars</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Drinks</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Favorites</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Profile</a>
-    </li>
-  </ul>
-    <a href="home.html"><button class="btn btn-secondary no-border sticky-top">Back</button></a>
-    <div class="container">
+  <nav class="nav-top sticky-top">
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Menu</a></li>
+      <li class="nav-item"><a class="nav-link" href="search.html"><i class="fa fa-search" aria-hidden="true"></i><br>Search</a></li>
+      <li class="nav-item"><a class="nav-link active" href="drink_swipe.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Drinks</a></li>
+      <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>Favorites</a></li>
+      <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+    </ul>
+  </nav>
+  <div class="container">
     <div class="row my-2">
       <div class="col-lg-12 text-center">
         <h1>Find Drinks</h1>
@@ -61,6 +53,17 @@
         </div>
       </div>
     </div> <!-- /container -->
+
+  <!-- Mobile Navigation -->
+  <nav class="nav-bottom fixed-bottom">
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Menu</a></li>
+      <li class="nav-item"><a class="nav-link" href="search.html"><i class="fa fa-search" aria-hidden="true"></i><br>Search</a></li>
+      <li class="nav-item"><a class="nav-link active" href="drink_swipe.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Drinks</a></li>
+      <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>Favorites</a></li>
+      <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+    </ul>
+  </nav>
 
 
     <!-- Bootstrap core JavaScript
