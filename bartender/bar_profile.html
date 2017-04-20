@@ -16,28 +16,20 @@
 
 <body>
     <a href="home.html">
-        <button class="btn" type="submit">Home</button>
+        <button class="btn btn-primary no-border sticky-top" type="submit">Home</button>
     </a>
     <div class="container vertical-center">
         <div class="row w-50">
             <div class="col-sm-12 text-center">
                 <h2>Bar Profile</h2>
-                <div class="row">
+                <div class="row" id="inject_drinks">
                     <div class="container" id="on_draft">
-                        <div class="form-group">
-                            <label for="exampleSelect2">Drinks Being Served</label>
-                            <select multiple class="form-control" id="exampleSelect2">
-                                <option>Bud</option>
-                                <option>Bud Light</option>
-                                <option>Bud Light Lime</option>
-                                <option>Old Fashioned</option>
-                                <option>Mike's Hard</option>
-                            </select>
-                        </div>
+                        
                     </div>
                     <div class="container" id="specialty">
                       
                     </div>
+                    <div class="row" id="inject_drinks"><div class="col-4"><h4>On Draft</h4><ul class="list-group"><li class="list-group-item justify-content-between">Bud Light<span class="badge badge-default badge-pill">5</span></li><li class="list-group-item justify-content-between">Heineken<span class="badge badge-default badge-pill">6</span></li><li class="list-group-item justify-content-between">Mike's<span class="badge badge-default badge-pill">5.5</span></li><li class="list-group-item justify-content-between">PBR<span class="badge badge-default badge-pill">5</span></li></ul></div><div class="col-4"><h4>Cocktail</h4><ul class="list-group"><li class="list-group-item justify-content-between">Old Fashioned<span class="badge badge-default badge-pill">8.5</span></li><li class="list-group-item justify-content-between">Negroni<span class="badge badge-default badge-pill">9</span></li></ul></div><div class="col-4"><h4>Specialty</h4><ul class="list-group"><li class="list-group-item justify-content-between">Hurricane<span class="badge badge-default badge-pill">13</span></li><li class="list-group-item justify-content-between">Tequila Sunrise<span class="badge badge-default badge-pill">11</span></li></ul></div></div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4">Bartenders On Shift</label>
@@ -75,6 +67,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="bartender.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script>
+        $(".list-group-item").click(function() {
+            $(this).toggleClass("active");
+        });
+    </script>
 </body>
 
 </html>
