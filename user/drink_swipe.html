@@ -33,22 +33,19 @@
       </div>
     </div>
       <div class="row vertical-center align-self-center">
-        <div class="col-sm-6">
+        <div class="col-sm-8">
           <div class="card drink-card">
-            <div class="front">
-              <img class="card-img-top drink-card-img" src="../img/marg.jpg" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Margarita</h4>
-                <p class="card-text">A Mexican tequila-based cocktail.</p>
-              </div>
+            <img class="card-img-top drink-card-img" id="drinkCardImage" src="../img/marg.jpg">
+            <div class="card-block">
+              <h4 class="card-title" id="drinkCardName">Margarita</h4>
+              <p class="card-text" id="drinkCardDescr">A sweet and salty tequila-based cocktail.</p>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
-          <nav class="text-center align-items-center">
-            <a href="#"><button class="btn btn-primary btn-menu">More Info</button></a>
-            <a href="#"><button class="btn btn-primary btn-menu">Skip</button></a>
-            <a href="search.html"><button class="btn btn-secondary btn-menu">Get This Drink</button></a>
+          <nav class="text-center">
+            <button class="btn btn-primary btn-swipe" id="skipButton" onclick="skipCard()"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Skip</button>
+            <a id="drinkCardLink" href="search_marg.html"><button class="btn btn-secondary btn-swipe"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Get</button></a>
           </nav>
         </div>
       </div>
@@ -78,14 +75,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
     <script>
-      $( ".drink-card" ).on ("swipe", function() {
-        $( this ).slideUp( "slow", function() {
-    // Animation complete.
-        });
-      });
-    </script>
+      function skipCard(){
+        if ($('#drinkCardImage').attr('src') == '../img/marg.jpg'){
+          $('#drinkCardImage').attr('src', '../img/bud.jpg')
+          $('#drinkCardName').html('Bud')
+          $('#drinkCardDescr').html('The king of beers. A lager.')
+          $('#drinkCardLink').attr('href', 'search_bud.html')}
 
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        else if ($('#drinkCardImage').attr('src') == '../img/bud.jpg'){
+          $('#drinkCardImage').attr('src', '../img/sake.jpg')
+          $('#drinkCardName').html('Sake')
+          $('#drinkCardDescr').html('A Japanese rice wine.')
+          $('#drinkCardLink').attr('href', 'search_sake.html')}
+               
+        else {
+          $('#drinkCardImage').attr('src', '../img/marg.jpg')
+          $('#drinkCardName').html('Margarita')
+          $('#drinkCardDescr').html('A sweet and salty tequila-based cocktail.')
+          $('#drinkCardLink').attr('href', 'search_marg.html')}
+      };
+    </script>
 
   </body>
 </html>
