@@ -15,9 +15,17 @@
 </head>
 
 <body>
-    <a href="home.html">
+    <nav class="nav-top sticky-top">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="bar_profile.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Manage Bar</a></li>
+            <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>My Drinks</a></li>
+            <li class="nav-item"><a class="nav-link active" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+        </ul>
+    </nav>
+    <!-- <a href="home.html">
         <button class="btn btn-primary no-border sticky-top" type="submit">Home</button>
-    </a>
+    </a> -->
     <div class="container">
         <div class="row my-2">
             <div class="col-sm-12 text-center">
@@ -62,66 +70,25 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h2>Settings</h2>
+                <h2></h2>
                 <form>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="example-date-input">Birthday</label>
                         <input class="form-control" type="date" value="1995-09-01" id="example-date-input">
-                    </div>
+                    </div> -->
                     <div class="form-group">
-                        <label for="exampleSelect1">Choose Region</label>
+                        <label for="exampleSelect1">Your Bars</label>
                         <select class="form-control" id="exampleSelect1">
-                            <option>Boston</option>
-                            <option>New York</option>
-                            <option>Los Angeles</option>
-                            <option>Toronto</option>
-                            <option>Dallas</option>
-                            <option>Seattle</option>
+                            <option>Joe's Pub</option>
+                            <option>Border Cafe</option>
                         </select>
                     </div>
                 </form>
-                <div class="range-slider">
-                    <label for="fader">Bar Maximum Distance (Mi)</label>
-                    <input class="range-slider__range" type="range" value="50" min="0" max="100" step="1">
-                    <span class="range-slider__value">0 mi</span>
-                </div>
                 <div>
-                    <label for="fader">Maximum Price ($ per drink)</label>
-                    <input class="range-slider__range" type="range" value="5" min="0" max="100" step="1">
-                    <span class="range-slider__value">$ 0</span>
-                </div>
-                <h2>Drink Preferences</h2>
-                <div class="row">
-                    <div class="col-4">
-                        <h5>Beers</h5>
-                        <ul class="list-group list-group-ghost">
-                            <li class="list-group-item list-group-item-ghost">Stouts</li>
-                            <li class="list-group-item list-group-item-ghost">Lagers</li>
-                            <li class="list-group-item list-group-item-ghost">IPAs</li>
-                            <li class="list-group-item list-group-item-ghost">Ales</li>
-                        </ul>
-                    </div>
-                    <div class="col-4">
-                        <h5>Spirits</h5>
-                        <ul class="list-group list-group-ghost">
-                            <li class="list-group-item list-group-item-ghost">Vodka</li>
-                            <li class="list-group-item list-group-item-ghost">Gin</li>
-                            <li class="list-group-item list-group-item-ghost">Rum</li>
-                            <li class="list-group-item list-group-item-ghost">Whiskey</li>
-                        </ul>
-                    </div>
-                    <div class="col-4">
-                        <h5>Cocktails</h5>
-                        <ul class="list-group list-group-ghost">
-                            <li class="list-group-item list-group-item-ghost">Bitter</li>
-                            <li class="list-group-item list-group-item-ghost">Sweet</li>
-                            <li class="list-group-item list-group-item-ghost">Strong</li>
-                            <li class="list-group-item list-group-item-ghost">Unique</li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <a href="../user/profile.html">
+                    <a href="../index.html">
+                        <button class="btn btn-secondary my-3">Log Out</button>
+                    </a>
+                    <a href="./profile.html">
                         <button class="btn btn-secondary my-3 float-right">Save Changes</button>
                     </a>
                 </div>
@@ -132,10 +99,9 @@
     <!-- Mobile Navigation -->
     <nav class="nav-bottom fixed-bottom">
         <ul class="nav nav-tabs nav-fill">
-            <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="search.html"><i class="fa fa-search" aria-hidden="true"></i><br>Search</a></li>
-            <li class="nav-item"><a class="nav-link" href="drink_swipe.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Drinks</a></li>
-            <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>Favorites</a></li>
+            <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="bar_profile.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Manage Bar</a></li>
+            <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>My Drinks</a></li>
             <li class="nav-item"><a class="nav-link active" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
         </ul>
     </nav>

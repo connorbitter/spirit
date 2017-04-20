@@ -129,6 +129,7 @@ function addDrink() {
 
 function removeDrink(e) {
     e.parentNode.parentNode.remove();
+    saveDrink();
 }
 
 function displayOnShiftHome() {
@@ -177,35 +178,41 @@ function displayBarProfileDrinks() {
     data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
     if (!data) { data = tutorial_data; }
 
-    var barDrinksHTML = '<div class="col-4"><h4>On Draft</h4><ul class="list-group">';
+    var barDrinksHTML = '<div class="col"><h4>On Draft</h4><ul class="list-group">';
     for (var i = 0; i < data.drinks.beers.length; i++) {
         barDrinksHTML += '<li class="list-group-item justify-content-between">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.beers[i].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
-        barDrinksHTML += data.drinks.beers[i].price;
+        if (data.drinks.beers[i].price){
+        	barDrinksHTML += data.drinks.beers[i].price;
+        }
         barDrinksHTML += '</span></li>';
     }
     barDrinksHTML += "</ul></div>";
 
-    barDrinksHTML += '<div class="col-4"><h4>Cocktail</h4><ul class="list-group">';
+    barDrinksHTML += '<div class="col"><h4>Cocktail</h4><ul class="list-group">';
     for (var k = 0; k < data.drinks.cocktails.length; k++) {
         barDrinksHTML += '<li class="list-group-item justify-content-between">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.cocktails[k].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
-        barDrinksHTML += data.drinks.cocktails[k].price;
+        if (data.drinks.cocktails[k].price){
+        	barDrinksHTML += data.drinks.cocktails[k].price;
+        }
         barDrinksHTML += '</span></li>';
     }
     barDrinksHTML += "</ul></div>";
 
-    barDrinksHTML += '<div class="col-4"><h4>Specialty</h4><ul class="list-group">';
+    barDrinksHTML += '<div class="col"><h4>Specialty</h4><ul class="list-group">';
     for (var j = 0; j < data.specialtyDrinks.length; j++) {
         barDrinksHTML += '<li class="list-group-item justify-content-between">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.specialtyDrinks[j].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
-        barDrinksHTML += data.specialtyDrinks[j].price;
+        if (data.specialtyDrinks[j].price){
+        	barDrinksHTML += data.specialtyDrinks[j].price;
+        }
         barDrinksHTML += '</span></li>';
     }
     barDrinksHTML += "</ul></div>";
@@ -252,6 +259,9 @@ $(function() {
     if (page == "bar_profile.html") {
         displayCheckedShifts();
         displayBarProfileDrinks();
+        $(".list-group-item").click(function() {
+        	$(this).toggleClass("active");
+    	});
     }
     if (page == "home.html") {
         displayOnShiftHome();
