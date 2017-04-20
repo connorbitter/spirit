@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>Spirit - Bar Profile</title>
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/bartender.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
-<a href="home.html"><button class="btn" type="submit">Home</button></a>
+<body>
+    <a href="home.html">
+        <button class="btn btn-primary no-border sticky-top" type="submit">Home</button>
+    </a>
     <div class="container vertical-center">
+<<<<<<< HEAD
       <div class="row w-50">
         <div class="col-sm-6 text-center">
         <h2>Bar Profile</h2>
@@ -86,16 +87,56 @@
                   <input class="form-check-input" type="checkbox" id="Ayo"> Ayo
                 </label>
               </div>
+=======
+        <div class="row w-50">
+            <div class="col-sm-12 text-center">
+                <h2>Bar Profile</h2>
+                <div class="row" id="inject_drinks">
+                    <div class="container" id="on_draft">
+                        
+                    </div>
+                    <div class="container" id="specialty">
+                      
+                    </div>
+                    <div class="row" id="inject_drinks"><div class="col-4"><h4>On Draft</h4><ul class="list-group"><li class="list-group-item justify-content-between">Bud Light<span class="badge badge-default badge-pill">5</span></li><li class="list-group-item justify-content-between">Heineken<span class="badge badge-default badge-pill">6</span></li><li class="list-group-item justify-content-between">Mike's<span class="badge badge-default badge-pill">5.5</span></li><li class="list-group-item justify-content-between">PBR<span class="badge badge-default badge-pill">5</span></li></ul></div><div class="col-4"><h4>Cocktail</h4><ul class="list-group"><li class="list-group-item justify-content-between">Old Fashioned<span class="badge badge-default badge-pill">8.5</span></li><li class="list-group-item justify-content-between">Negroni<span class="badge badge-default badge-pill">9</span></li></ul></div><div class="col-4"><h4>Specialty</h4><ul class="list-group"><li class="list-group-item justify-content-between">Hurricane<span class="badge badge-default badge-pill">13</span></li><li class="list-group-item justify-content-between">Tequila Sunrise<span class="badge badge-default badge-pill">11</span></li></ul></div></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4">Bartenders On Shift</label>
+                    <div class="col-sm-8" id="bartender_checkboxes">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="Connor"> Connor
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="Juaquin"> Juaquin
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="Ayo"> Ayo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" type="submit" id="saveBarProfile">Submit</button>
+                <a href="review.html" title="">
+                    <button class="btn btn-secondary">Reviews</button>
+                </a>
+>>>>>>> ad67c83b261a46fde8c8d8451120279f192c47bb
             </div>
-          </div>
-                  <button class="btn btn-secondary" type="submit" id="saveBarProfile">Submit</button>
-                  <a href="review.html" title=""><button class="btn btn-secondary">Reviews</button></a>
         </div>
+<<<<<<< HEAD
         
       </div>
     </div> <!-- /container -->
 
 
+=======
+    </div>
+    <!-- /container -->
+>>>>>>> ad67c83b261a46fde8c8d8451120279f192c47bb
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -104,5 +145,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="bartender.js" type="text/javascript" charset="utf-8" async defer></script>
-  </body>
+    <script>
+        $(".list-group-item").click(function() {
+            $(this).toggleClass("active");
+        });
+    </script>
+</body>
+
 </html>

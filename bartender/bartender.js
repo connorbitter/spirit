@@ -14,18 +14,31 @@ var tutorial_data = {
         text: "This sucks and you sucks",
         stars: 2,
         response: '',
-    },],
+    }, ],
 
     onShift: ['Juaquin', 'Connor', 'Ayo'],
+
+    drinks: {
+        beers: [
+            { name: "Bud Light", price: 5 },
+            { name: "Heineken", price: 6 },
+            { name: "Mike's", price: 5.5 },
+            { name: "PBR", price: 5 },
+        ],
+        cocktails: [
+            { name: "Old Fashioned", price: 8.5 },
+            { name: "Negroni", price: 9 }
+        ]
+    },
 
     specialtyDrinks: [{
         name: "Hurricane",
         desc: "sweet alcoholic drink made with rum, fruit juice, and syrup or grenadine",
-        null: NaN,
+        price: 13,
     }, {
         name: "Tequila Sunrise",
         desc: "cocktail made with tequila, orange juice, and grenadine syrup",
-        null: NaN,
+        price: 11,
     }],
 };
 
@@ -94,11 +107,10 @@ function saveDrink() {
     var names = document.querySelectorAll('#drinkName');
     var descs = document.querySelectorAll('#description');
     for (var i = 0; i < names.length; i++) {
-    	n = names[i].value;
-    	d = descs[i].value;
-    	data.specialtyDrinks[i] = {name: n, desc: d};
+        n = names[i].value;
+        d = descs[i].value;
+        data.specialtyDrinks[i] = { name: n, desc: d };
     }
-    console.log(data.specialtyDrinks);
     // save to localStorage
     localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
     displayBartenderDrinks();
@@ -139,7 +151,6 @@ function displayCheckedShifts() {
     for (var i = 0; i < data.onShift.length; i++) {
         $('#' + data.onShift[i])[0].checked = true;
     }
-    console.log(data.onShift);
 }
 
 function addReview(text, index) {
@@ -160,6 +171,46 @@ function barProfileSubmit() {
     }
     localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
     displayCheckedShifts();
+}
+
+function displayBarProfileDrinks() {
+    data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
+    if (!data) { data = tutorial_data; }
+
+    var barDrinksHTML = '<div class="col-4"><h4>On Draft</h4><ul class="list-group">';
+    for (var i = 0; i < data.drinks.beers.length; i++) {
+        barDrinksHTML += '<li class="list-group-item justify-content-between">';
+        // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
+        barDrinksHTML += data.drinks.beers[i].name;
+        barDrinksHTML += '<span class="badge badge-default badge-pill">';
+        barDrinksHTML += data.drinks.beers[i].price;
+        barDrinksHTML += '</span></li>';
+    }
+    barDrinksHTML += "</ul></div>";
+
+    barDrinksHTML += '<div class="col-4"><h4>Cocktail</h4><ul class="list-group">';
+    for (var k = 0; k < data.drinks.cocktails.length; k++) {
+        barDrinksHTML += '<li class="list-group-item justify-content-between">';
+        // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
+        barDrinksHTML += data.drinks.cocktails[k].name;
+        barDrinksHTML += '<span class="badge badge-default badge-pill">';
+        barDrinksHTML += data.drinks.cocktails[k].price;
+        barDrinksHTML += '</span></li>';
+    }
+    barDrinksHTML += "</ul></div>";
+
+    barDrinksHTML += '<div class="col-4"><h4>Specialty</h4><ul class="list-group">';
+    for (var j = 0; j < data.specialtyDrinks.length; j++) {
+        barDrinksHTML += '<li class="list-group-item justify-content-between">';
+        // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
+        barDrinksHTML += data.specialtyDrinks[j].name;
+        barDrinksHTML += '<span class="badge badge-default badge-pill">';
+        barDrinksHTML += data.specialtyDrinks[j].price;
+        barDrinksHTML += '</span></li>';
+    }
+    barDrinksHTML += "</ul></div>";
+
+    $('#inject_drinks').html(barDrinksHTML);
 }
 
 
@@ -190,6 +241,7 @@ $("body").on('click', '#save_changes', function() {
 });
 
 
+
 // and awaaaaay we go
 $(function() {
 
@@ -199,6 +251,7 @@ $(function() {
     }
     if (page == "bar_profile.html") {
         displayCheckedShifts();
+        displayBarProfileDrinks();
     }
     if (page == "home.html") {
         displayOnShiftHome();
