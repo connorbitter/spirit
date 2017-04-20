@@ -183,7 +183,9 @@ function displayBarProfileDrinks() {
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.beers[i].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
-        barDrinksHTML += data.drinks.beers[i].price;
+        if (data.drinks.beers[i].price){
+        	barDrinksHTML += data.drinks.beers[i].price;
+        }
         barDrinksHTML += '</span></li>';
     }
     barDrinksHTML += "</ul></div>";
@@ -194,7 +196,9 @@ function displayBarProfileDrinks() {
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.cocktails[k].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
-        barDrinksHTML += data.drinks.cocktails[k].price;
+        if (data.drinks.cocktails[k].price){
+        	barDrinksHTML += data.drinks.cocktails[k].price;
+        }
         barDrinksHTML += '</span></li>';
     }
     barDrinksHTML += "</ul></div>";
@@ -205,7 +209,9 @@ function displayBarProfileDrinks() {
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.specialtyDrinks[j].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
-        barDrinksHTML += data.specialtyDrinks[j].price;
+        if (data.specialtyDrinks[j].price){
+        	barDrinksHTML += data.specialtyDrinks[j].price;
+        }
         barDrinksHTML += '</span></li>';
     }
     barDrinksHTML += "</ul></div>";
