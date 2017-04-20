@@ -29,49 +29,45 @@
  
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-lg-12">
           <h1>Favorites</h1>
-
           <div class="onoffswitch">
             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" onclick="switchFunction()" id="myonoffswitch" checked>
             <label class="onoffswitch-label" for="myonoffswitch">
             <span class="onoffswitch-inner"></span>
             </label>
           </div>
-
+        </div>
+        <div class="col-lg-12">
           <!-- Drinks Table -->
           <div id="drinks">
-            <table class="table">
+            <table class="table table-hover">
               <thead>
                 <tr>
                   <th></th>
                   <th>Drink Name</th>
                   <th>Drink Type</th>
                   <th>Bar Name</th>
-                  <th>Remove?</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row"><i class="fa fa-close" aria-hidden="true" onclick="deleteRow(this)"></i></th>
                   <td>Stella Cidre</td>
                   <td>Cider</td>
                   <td>Cellar</td>
-                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
+                  <th scope="row"><i class="fa fa-close" aria-hidden="true" onclick="deleteRow(this)"></i></th>
                   <td>Aviation</td>
                   <td>Cocktail</td>
                   <td>Pigalle</td>
-                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
+                  <th scope="row"><i class="fa fa-close" aria-hidden="true" onclick="deleteRow(this)"></i></th>
                   <td>Caipirinha</td>
                   <td>Cocktail</td>
                   <td>Chez Henri</td>
-                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
                 </tr>
               </tbody>
            </table>
@@ -86,30 +82,26 @@
                   <th>Bar Name</th>
                   <th>Bartender</th>
                   <th>Address</th>
-                  <th>Remove?</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row"><i class="fa fa-close" aria-hidden="true" onclick="deleteRow(this)"></i></th>
                   <td>Tavern in the Square (Allston)</td>
                   <td>Allison</td>
                   <td>161 Brighton Ave, Boston, MA</td>
-                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
+                  <th scope="row"><i class="fa fa-close" aria-hidden="true" onclick="deleteRow(this)"></i></th>
                   <td>Wonder Bar</td>
                   <td>Jenny</td>
                   <td>186 Harvard Ave, Allston, MA</td>
-                  <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
-                    <td>City Bar</td>
-                    <td>Craig</td>
-                    <td>61 Exeter St, Boston, MA</td>
-                    <td><img src="../img/icon_24.png" onclick="deleteRow(this)"/></td>
+                  <th scope="row"><i class="fa fa-close" aria-hidden="true" onclick="deleteRow(this)"></i></th>
+                  <td>City Bar</td>
+                  <td>Craig</td>
+                  <td>61 Exeter St, Boston, MA</td>
                 </tr>
               </tbody>
            </table>
@@ -146,5 +138,13 @@
         row.parentNode.removeChild(row);
       };
     </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </body>
 </html>
