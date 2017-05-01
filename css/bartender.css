@@ -87,6 +87,12 @@ a {
   border-color: #ffffff;
 }
 
+.list-group-item.active {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
 /************************
         NAVIGATION 
 *************************/
@@ -140,6 +146,15 @@ a {
   border: 0;
 }
 
+/************************
+      Bar Profile
+*************************/
+
+.drinkName {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
 @media (min-width: 576px) {
   body {
     font-size: 1.0rem;
@@ -152,10 +167,6 @@ a {
 
   .nav-bottom {
     display: none;
-  }
-
-  .container {
-    padding-bottom: 0;
   }
 
 }

@@ -173,6 +173,10 @@ label {
   color: #111111;
 }
 
+.btn-danger {
+  color: #111111;
+}
+
 .btn-facebook:hover, 
 .btn-facebook:focus, 
 .btn-facebook:active, 
@@ -393,7 +397,7 @@ ul {
   }
 
   .container {
-    padding-bottom: 0;
+    padding-bottom: 1rem;
   }
 
 }

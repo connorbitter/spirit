@@ -86,31 +86,37 @@ function displayBartenderDrinks() {
     if (!data) { data = tutorial_data; }
     var barFavHTML = "<li>";
 
-    var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
-        "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>" +
-        "<textarea id='drinkName' rows='1' placeholder='Insert Drink Name' style = 'border: none; resize: both; overflow: auto;' maxlength='35'>{0}</textarea>" +
-        "</h5></div><p class='mb-1'><textarea id='description' rows='2' placeholder='Insert Drink Description' style = 'border: none; resize: none;' maxlength='100'>{1}</textarea></p>" +
-        "<div><button class='btn btn-secondary my-1' onclick='saveDrink()'>Save</button>" +
-        "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
+    var drink = "<div class='list-group-item'>" +
+        "<label>Drink Name:</label><input type='text' class='drinkName form-control' placeholder='New Drink Name' value='{0}'>" +
+        "<label>Drink Description:</label><input type='text' class='drinkDescription form-control' placeholder='New Drink Description' value='{1}'>" +
+        "<label>Price:</label><input type='number' class='drinkPrice form-control' placeholder='0' min='0' value='{2}'>" +
+        "<div class='input-group'><a tabindex='0' class='btn btn-primary float-right' role='button' data-toggle='popover' data-trigger='focus' onclick='saveDrink()' data-content='Saved'>Save</a>" +
+        "<button class='btn btn-danger float-right' onclick='removeDrink(this)'>Delete</button></div></div>";
 
-    for (var i = 0; i < data.specialtyDrinks.length; i++) {
-        var drinkObj = data.specialtyDrinks[i];
-        barFavHTML += drink.format(drinkObj.name, drinkObj.desc);
+    if (data.specialtyDrinks[0].name == null) {
+        $('#specialty_drink').html("<h3 class='text-center'>No Saved Drinks</h3>");
     }
-    barFavHTML += '</li>';
-    $('#specialty_drink').html(barFavHTML);
-
+    else {
+        for (var i = 0; i < data.specialtyDrinks.length; i++) {
+            var drinkObj = data.specialtyDrinks[i];
+            barFavHTML += drink.format(drinkObj.name, drinkObj.desc, drinkObj.price);
+        }
+        barFavHTML += '</li>';
+        $('#specialty_drink').html(barFavHTML);
+    }
 }
 
 function saveDrink() {
     // update data.specialtyDrinks
     data.specialtyDrinks = [{}];
-    var names = document.querySelectorAll('#drinkName');
-    var descs = document.querySelectorAll('#description');
+    var names = document.querySelectorAll('.drinkName');
+    var descs = document.querySelectorAll('.drinkDescription');
+    var prices = document.querySelectorAll('.drinkPrice');
     for (var i = 0; i < names.length; i++) {
         n = names[i].value;
         d = descs[i].value;
-        data.specialtyDrinks[i] = { name: n, desc: d };
+        p = prices[i].value;
+        data.specialtyDrinks[i] = { name: n, desc: d, price: p };
     }
     // save to localStorage
     localStorage.setItem('data_spirit_webapp', JSON.stringify(data));
@@ -118,12 +124,17 @@ function saveDrink() {
 }
 
 function addDrink() {
-    var drink = "<div class='list-group'> <div class='list-group-item list-group-item-action flex-column align-items-start'>" +
-        "<div class='d-flex w-100 justify-content-between'> <h5 class='mb-1'>" +
-        "<textarea id='drinkName' rows='1' placeholder='Insert Drink Name' style = 'border: none; resize: both; overflow: auto;' maxlength='35'></textarea>" +
-        "</h5></div><p class='mb-1'><textarea id='description' rows='2' placeholder='Insert Drink Description (max 100 characters)' style = 'border: none; resize: none;' maxlength='100'></textarea></p>" +
-        "<div><button class='btn btn-secondary my-1' onclick='saveDrink()'>Save</button>" +
-        "<button class='btn btn-secondary my-1' onclick='removeDrink(this)'>Delete</button></div></div></div>";
+
+    if (data.specialtyDrinks[0].name == null) {
+        $('#specialty_drink').html("<p class='text-center text-muted'>You're adding your first drink...</p>");
+    }
+
+    var drink = "<div class='list-group-item'>" +
+        "<label>Drink Name:</label><input type='text' class='drinkName form-control' placeholder='New Drink Name'>" +
+        "<label>Drink Description:</label><input type='text' class='drinkDescription form-control' placeholder='New Drink Description'>" +
+        "<label>Price:</label><input type='number' class='drinkPrice form-control' placeholder='0' min='0'>" +
+        "<div class='input-group'><a tabindex='0' class='btn btn-primary float-right' role='button' data-toggle='popover' data-trigger='focus' onclick='saveDrink()' data-content='Saved'>Save</a>" +
+        "<button class='btn btn-danger float-right' onclick='removeDrink(this)'>Delete</button></div></div>";
 
     document.getElementById("specialty_drink").insertAdjacentHTML('beforeend', drink);
 }
@@ -179,9 +190,9 @@ function displayBarProfileDrinks() {
     data = JSON.parse(localStorage.getItem('data_spirit_webapp'));
     if (!data) { data = tutorial_data; }
 
-    var barDrinksHTML = '<div class="col"><h4>On Draft</h4><ul class="list-group">';
+    var barDrinksHTML = '<div class="col-sm-12"><h4 class="my-2">Beer - On Draft</h4><ul class="list-group">';
     for (var i = 0; i < data.drinks.beers.length; i++) {
-        barDrinksHTML += '<li class="list-group-item justify-content-between">';
+        barDrinksHTML += '<li class="list-group-item justify-content-between active">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.beers[i].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
@@ -192,9 +203,9 @@ function displayBarProfileDrinks() {
     }
     barDrinksHTML += "</ul></div>";
 
-    barDrinksHTML += '<div class="col"><h4>Cocktail</h4><ul class="list-group">';
+    barDrinksHTML += '<div class="col-sm-12"><h4 class="my-2">Cocktails</h4><ul class="list-group">';
     for (var k = 0; k < data.drinks.cocktails.length; k++) {
-        barDrinksHTML += '<li class="list-group-item justify-content-between">';
+        barDrinksHTML += '<li class="list-group-item justify-content-between active">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.cocktails[k].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
@@ -205,9 +216,9 @@ function displayBarProfileDrinks() {
     }
     barDrinksHTML += "</ul></div>";
 
-    barDrinksHTML += '<div class="col"><h4>Specialty</h4><ul class="list-group">';
+    barDrinksHTML += '<div class="col-sm-12"><h4 class="my-2">My Specialty Drinks</h4><ul class="list-group">';
     for (var j = 0; j < data.specialtyDrinks.length; j++) {
-        barDrinksHTML += '<li class="list-group-item justify-content-between">';
+        barDrinksHTML += '<li class="list-group-item justify-content-between active">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.specialtyDrinks[j].name;
         barDrinksHTML += '<span class="badge badge-default badge-pill">';
