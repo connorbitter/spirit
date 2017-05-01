@@ -1,6 +1,7 @@
 var data = { reviews: [{}], onShift: [], specialtyDrinks: [{}], };
 
-//a data structure for storing information about the team
+// a data structure for storing information about the team
+// *** Adapted from CS179 coding lab 1 ***
 var tutorial_data = {
     reviews: [{
         item: "Hurricane",
@@ -257,7 +258,7 @@ $(function() {
         displayBarReviews();
     }
     if (page == "bar_profile.html") {
-        displayCheckedShifts();
+        //displayCheckedShifts();
         displayBarProfileDrinks();
         $(".list-group-item").click(function() {
         	$(this).toggleClass("active");

@@ -1,115 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
-  <title>Spirit - Bar Profile</title>
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <!-- Custom CSS -->
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/bartender.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Spirit - Bar Profile</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+      <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/bartender.css" rel="stylesheet">
+  </head>
 
-<body>
-  <nav class="nav-top sticky-top">
-    <ul class="nav nav-tabs nav-fill">
-      <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
-      <li class="nav-item"><a class="nav-link active" href="bar_profile.html"><i class="fa fa-building" aria-hidden="true"></i><br>Manage Bar</a></li>
-      <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-beer" aria-hidden="true"></i><br>My Drinks</a></li>
-      <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-    <div class="row w-50">
-      <div class="col-sm-12 text-center">
-        <h2>Bar Profile</h2>
-        <div class="row" id="inject_drinks">
-          <div class="container" id="on_draft">
-          </div>
-          <div class="container" id="specialty">
-          </div>
-          <div class="col-4" id="inject_drinks">
-            <div class="col-4">
-              <h4>On Draft</h4>
-              <ul class="list-group">
-                <li class="list-group-item justify-content-between">Bud Light<span class="badge badge-default badge-pill">5</span></li>
-                <li class="list-group-item justify-content-between">Heineken<span class="badge badge-default badge-pill">6</span></li>
-                <li class="list-group-item justify-content-between">Mike's<span class="badge badge-default badge-pill">5.5</span></li>
-                <li class="list-group-item justify-content-between">PBR<span class="badge badge-default badge-pill">5</span></li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <h4>Cocktail</h4>
-              <ul class="list-group">
-                <li class="list-group-item justify-content-between">Old Fashioned<span class="badge badge-default badge-pill">8.5</span></li>
-                <li class="list-group-item justify-content-between">Negroni<span class="badge badge-default badge-pill">9</span></li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <h4>Specialty</h4>
-              <ul class="list-group">
-                <li class="list-group-item justify-content-between">Hurricane<span class="badge badge-default badge-pill">13</span></li>
-                <li class="list-group-item justify-content-between">Tequila Sunrise<span class="badge badge-default badge-pill">11</span></li>
-              </ul>
-            </div>
-          </div>
+  <body>
+    <nav class="nav-top sticky-top">
+      <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="bar_profile.html"><i class="fa fa-building" aria-hidden="true"></i><br>Manage Bar</a></li>
+        <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-beer" aria-hidden="true"></i><br>My Drinks</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-sm-12 text-center">
+          <h1>Manage Bar</h1>
         </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Bartenders On Shift</label>
-          <div class="col-sm-8" id="bartender_checkboxes">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="Connor"> Connor
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="Juaquin"> Juaquin
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="Ayo"> Ayo
-              </label>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-secondary" type="submit" id="saveBarProfile">Submit</button>
-        <a href="review.html" title="">
-          <button class="btn btn-secondary">Reviews</button>
-        </a>
       </div>
-    </div>
-  </div>
-  <!-- container -->
-  <nav class="nav-bottom fixed-bottom">
-    <ul class="nav nav-tabs nav-fill">
-      <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
-      <li class="nav-item"><a class="nav-link active" href="bar_profile.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Manage Bar</a></li>
-      <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>My Drinks</a></li>
-      <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
-    </ul>
-  </nav>
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script src="bartender.js" type="text/javascript" charset="utf-8" async defer></script>
-  <script>
-  $(".list-group-item").click(function() {
-    $(this).toggleClass("active");
-  });
-  </script>
-</body>
+      <div class="row">
+        <div class="col-12" id="inject_drinks">
+          <div class="col-lg-4">
+            <h4>On Draft</h4>
+            <ul class="list-group">
+              <li class="list-group-item justify-content-between">Bud Light<span class="badge badge-default badge-pill">5</span></li>
+              <li class="list-group-item justify-content-between">Heineken<span class="badge badge-default badge-pill">6</span></li>
+              <li class="list-group-item justify-content-between">Mike's<span class="badge badge-default badge-pill">5.5</span></li>
+              <li class="list-group-item justify-content-between">PBR<span class="badge badge-default badge-pill">5</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h4>Cocktail</h4>
+            <ul class="list-group">
+              <li class="list-group-item justify-content-between">Old Fashioned<span class="badge badge-default badge-pill">8.5</span></li>
+              <li class="list-group-item justify-content-between">Negroni<span class="badge badge-default badge-pill">9</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-4" id="specialty-drink">
+            <h4>Specialty</h4>
+            <ul class="list-group">
+              <li class="list-group-item justify-content-between">Hurricane<span class="badge badge-default badge-pill">13</span></li>
+              <li class="list-group-item justify-content-between">Tequila Sunrise<span class="badge badge-default badge-pill">11</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--<div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label>Bartenders On Shift</label>
+            <div class="col-sm-8" id="bartender_checkboxes">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" id="Connor"> Connor
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" id="Juaquin"> Juaquin
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" id="Ayo"> Ayo
+                </label>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" type="submit" id="saveBarProfile">Submit</button>
+          <a href="review.html" title=""><button class="btn btn-secondary">Reviews</button></a>
+        </div>
+      </div> -->
+    </div><!-- container -->
+    <nav class="nav-bottom fixed-bottom">
+      <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item"><a class="nav-link" href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="bar_profile.html"><i class="fa fa-beer" aria-hidden="true"></i><br>Manage Bar</a></li>
+        <li class="nav-item"><a class="nav-link" href="favorites.html"><i class="fa fa-heart" aria-hidden="true"></i><br>My Drinks</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i><br>Profile</a></li>
+      </ul>
+    </nav>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="bartender.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script>
+    $(".list-group-item").click(function() {
+      $(this).toggleClass("active");
+    });
+    </script>
+  </body>
 
 </html>
