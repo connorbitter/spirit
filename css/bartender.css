@@ -93,6 +93,13 @@ a {
   border-color: #111111;
 }
 
+.modal-body {
+  color: #ffffff;
+}
+
+.modal-header {
+  color: #ffffff;
+}
 /************************
         NAVIGATION 
 *************************/
