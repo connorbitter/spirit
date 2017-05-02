@@ -195,7 +195,7 @@ function displayBarProfileDrinks() {
         barDrinksHTML += '<li class="list-group-item justify-content-between active">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.beers[i].name;
-        barDrinksHTML += '<span class="badge badge-default badge-pill">';
+        barDrinksHTML += '<span class="badge badge-default badge-pill">$';
         if (data.drinks.beers[i].price){
         	barDrinksHTML += data.drinks.beers[i].price;
         }
@@ -208,7 +208,7 @@ function displayBarProfileDrinks() {
         barDrinksHTML += '<li class="list-group-item justify-content-between active">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.drinks.cocktails[k].name;
-        barDrinksHTML += '<span class="badge badge-default badge-pill">';
+        barDrinksHTML += '<span class="badge badge-default badge-pill">$';
         if (data.drinks.cocktails[k].price){
         	barDrinksHTML += data.drinks.cocktails[k].price;
         }
@@ -221,7 +221,7 @@ function displayBarProfileDrinks() {
         barDrinksHTML += '<li class="list-group-item justify-content-between active">';
         // barDrinksHTML += '<input class="form-check-input" type="checkbox">';
         barDrinksHTML += data.specialtyDrinks[j].name;
-        barDrinksHTML += '<span class="badge badge-default badge-pill">';
+        barDrinksHTML += '<span class="badge badge-default badge-pill">$';
         if (data.specialtyDrinks[j].price){
         	barDrinksHTML += data.specialtyDrinks[j].price;
         }
